@@ -23,7 +23,6 @@ final class GalleryCollectionViewCell: UICollectionViewCell {
     // MARK: - @IBOutlet
 
     @IBOutlet private(set) weak var thumbnailImageView: UIImageView!
-    @IBOutlet private weak var titleLabel: UILabel!
 
     // MARK: - Override
 
@@ -38,7 +37,10 @@ final class GalleryCollectionViewCell: UICollectionViewCell {
     func setCell(_ rectanglePhoto: RectanglePhoto) {
 
         thumbnailImageView.image = UIImage(named: rectanglePhoto.thumbnailName)
-        titleLabel.text = rectanglePhoto.title
+    }
+
+    public func setHighlighted(_ highlighted: Bool) {
+        self.thumbnailImageView.isHidden = !highlighted
     }
 
     // MARK: - Private Function

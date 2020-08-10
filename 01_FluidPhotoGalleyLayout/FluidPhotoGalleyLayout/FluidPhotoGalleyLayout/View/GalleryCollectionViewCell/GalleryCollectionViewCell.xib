@@ -23,31 +23,10 @@
                             <constraint firstAttribute="height" constant="240" id="hCa-ia-8Ty"/>
                         </constraints>
                     </imageView>
-                    <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pr9-uB-vRB">
-                        <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
-                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="240" id="7O6-cd-Q9U"/>
-                            <constraint firstAttribute="width" constant="240" id="8LB-tk-NEe"/>
-                        </constraints>
-                    </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cafe Food No.XXX" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eyi-c4-Uet">
-                        <rect key="frame" x="16" y="16" width="208" height="17"/>
-                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="eyi-c4-Uet" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="16" id="4iK-bj-WXR"/>
-                <constraint firstAttribute="trailing" secondItem="eyi-c4-Uet" secondAttribute="trailing" constant="16" id="7SQ-bH-0qw"/>
-                <constraint firstAttribute="trailing" secondItem="pr9-uB-vRB" secondAttribute="trailing" id="Icr-9V-PAq"/>
-                <constraint firstItem="eyi-c4-Uet" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="Oja-L1-ScU"/>
-                <constraint firstItem="pr9-uB-vRB" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="SNe-Xm-04J"/>
                 <constraint firstItem="RjC-6d-qWF" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="TRG-fn-Xcy"/>
-                <constraint firstItem="pr9-uB-vRB" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="gZX-oF-GCR"/>
-                <constraint firstAttribute="bottom" secondItem="pr9-uB-vRB" secondAttribute="bottom" id="mvt-Wl-1Ns"/>
                 <constraint firstAttribute="bottom" secondItem="RjC-6d-qWF" secondAttribute="bottom" id="svY-Ys-AAZ"/>
                 <constraint firstAttribute="trailing" secondItem="RjC-6d-qWF" secondAttribute="trailing" id="vYz-5j-XaR"/>
                 <constraint firstItem="RjC-6d-qWF" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="yem-wD-Tsm"/>
@@ -55,7 +34,6 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
                 <outlet property="thumbnailImageView" destination="RjC-6d-qWF" id="RHO-9y-o6m"/>
-                <outlet property="titleLabel" destination="eyi-c4-Uet" id="yfC-WA-idm"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="112.5"/>
         </collectionViewCell>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kYc-7e-8ep">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Photo Detail View Controller-->
+        <scene sceneID="DQN-Dp-7ZY">
+            <objects>
+                <viewController id="kYc-7e-8ep" customClass="PhotoDetailViewController" customModule="FluidPhotoGalleyLayout" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rLM-4l-8tj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample" translatesAutoresizingMaskIntoConstraints="NO" id="MDJ-Ps-lKJ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="MDJ-Ps-lKJ" firstAttribute="top" secondItem="rLM-4l-8tj" secondAttribute="top" id="JMO-5Z-nUL"/>
+                            <constraint firstAttribute="bottom" secondItem="MDJ-Ps-lKJ" secondAttribute="bottom" id="RGJ-Je-iu5"/>
+                            <constraint firstItem="MDJ-Ps-lKJ" firstAttribute="leading" secondItem="dkF-Qp-gE6" secondAttribute="leading" id="TY1-fP-Ckc"/>
+                            <constraint firstItem="dkF-Qp-gE6" firstAttribute="trailing" secondItem="MDJ-Ps-lKJ" secondAttribute="trailing" id="rUf-26-de9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dkF-Qp-gE6"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="MDJ-Ps-lKJ" id="p0b-Y2-gu6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pgm-aC-jn6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="277" y="28"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="sample" width="240" height="240"/>
+    </resources>
+</document>
