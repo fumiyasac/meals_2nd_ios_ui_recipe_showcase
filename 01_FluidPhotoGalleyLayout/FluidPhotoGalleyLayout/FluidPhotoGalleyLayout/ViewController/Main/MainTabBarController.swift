@@ -99,11 +99,11 @@ final class MainTabBarController: UITabBarController {
             featuredNavigationController
         ]
         galleryNavigationController.pushViewController(
-            GalleryViewController.instantiate(),
+            UIStoryboard(name: "Gallery", bundle: nil).instantiateInitialViewController()!,
             animated: false
         )
         featuredNavigationController.pushViewController(
-            FeaturedViewController.instantiate(),
+            UIStoryboard(name: "Featured", bundle: nil).instantiateInitialViewController()!,
             animated: false
         )
 

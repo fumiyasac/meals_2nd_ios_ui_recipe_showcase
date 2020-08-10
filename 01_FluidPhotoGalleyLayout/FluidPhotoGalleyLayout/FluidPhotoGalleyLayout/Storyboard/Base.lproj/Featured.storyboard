@@ -14,13 +14,35 @@
                     <view key="view" contentMode="scaleToFill" id="eFL-fa-xSS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="AjI-LE-5RI">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xme-Wk-zRL">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="AjI-LE-5RI" firstAttribute="leading" secondItem="FkQ-5l-NXB" secondAttribute="leading" id="PMt-ma-7hR"/>
+                            <constraint firstItem="AjI-LE-5RI" firstAttribute="trailing" secondItem="FkQ-5l-NXB" secondAttribute="trailing" id="WC3-fw-iVX"/>
+                            <constraint firstItem="AjI-LE-5RI" firstAttribute="top" secondItem="FkQ-5l-NXB" secondAttribute="top" id="lio-VU-VGH"/>
+                            <constraint firstItem="AjI-LE-5RI" firstAttribute="bottom" secondItem="FkQ-5l-NXB" secondAttribute="bottom" id="ovO-go-Im0"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="FkQ-5l-NXB"/>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="AjI-LE-5RI" id="yv6-oZ-V5S"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ijr-As-3XE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-19" y="48"/>
+            <point key="canvasLocation" x="-20" y="47.226386806596707"/>
         </scene>
     </scenes>
 </document>

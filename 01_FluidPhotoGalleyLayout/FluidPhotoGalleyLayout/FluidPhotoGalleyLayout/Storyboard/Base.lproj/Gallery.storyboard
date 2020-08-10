@@ -14,13 +14,35 @@
                     <view key="view" contentMode="scaleToFill" id="nwX-0p-ylx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xzp-x8-F7Z">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="RE7-tk-zZF" customClass="MultipleScrollDirectionLayout" customModule="FluidPhotoGalleyLayout" customModuleProvider="target">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="xzp-x8-F7Z" firstAttribute="leading" secondItem="dGu-rx-EhX" secondAttribute="leading" id="Ayx-W3-WPL"/>
+                            <constraint firstItem="xzp-x8-F7Z" firstAttribute="trailing" secondItem="dGu-rx-EhX" secondAttribute="trailing" id="H6X-YE-nh3"/>
+                            <constraint firstItem="xzp-x8-F7Z" firstAttribute="bottom" secondItem="dGu-rx-EhX" secondAttribute="bottom" id="ozh-pJ-92L"/>
+                            <constraint firstItem="xzp-x8-F7Z" firstAttribute="top" secondItem="dGu-rx-EhX" secondAttribute="top" id="rOs-KT-SlX"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="dGu-rx-EhX"/>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="xzp-x8-F7Z" id="BAU-QM-oOW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mu1-B9-w1f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="36" y="30"/>
+            <point key="canvasLocation" x="36" y="29.23538230884558"/>
         </scene>
     </scenes>
 </document>
