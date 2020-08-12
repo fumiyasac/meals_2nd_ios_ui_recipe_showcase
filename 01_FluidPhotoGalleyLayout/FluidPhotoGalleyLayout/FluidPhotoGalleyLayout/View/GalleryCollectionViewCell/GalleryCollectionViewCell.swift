@@ -18,7 +18,7 @@ final class GalleryCollectionViewCell: UICollectionViewCell {
 
     // MARK: - Properties
 
-    static let cellSize: CGSize = CGSize(width: 240.0, height: 240.0)
+    static let cellSize: CGSize = CGSize(width: 200.0, height: 200.0)
 
     // MARK: - @IBOutlet
 
