@@ -9,4 +9,5 @@ target 'PasscodeLockLayout' do
   pod 'RealmSwift'
   pod 'SwipeCellKit'
   pod 'PanModal'
+  pod 'SwiftyMarkdown'
 end
