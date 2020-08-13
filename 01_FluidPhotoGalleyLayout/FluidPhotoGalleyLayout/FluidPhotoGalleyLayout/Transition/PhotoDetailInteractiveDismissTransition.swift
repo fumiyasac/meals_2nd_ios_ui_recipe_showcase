@@ -12,7 +12,8 @@ import UIKit
 /// Manages the interactive transition animation for the drag-to-dismiss gesture
 /// in Locket Photos — designed to mimic the same gesture from Apple's Photos app.
 
-public class PhotoDetailInteractiveDismissTransition: NSObject {
+final class PhotoDetailInteractiveDismissTransition: NSObject {
+
     /// The from- and to- viewControllers can conform to the protocol in order to get updates and vend snapshotViews
     fileprivate let fromDelegate: PhotoDetailTransitionAnimatorDelegate
     fileprivate weak var toDelegate: PhotoDetailTransitionAnimatorDelegate?
@@ -25,6 +26,7 @@ public class PhotoDetailInteractiveDismissTransition: NSObject {
     fileprivate var transitionContext: UIViewControllerContextTransitioning? = nil
     fileprivate var fromReferenceImageViewFrame: CGRect? = nil
     fileprivate var toReferenceImageViewFrame: CGRect? = nil
+
     fileprivate weak var fromVC: PhotoDetailViewController? = nil
     fileprivate weak var toVC: UIViewController? = nil
 
@@ -220,6 +222,5 @@ extension PhotoDetailInteractiveDismissTransition: UIViewControllerInteractiveTr
             }
         })
         self.backgroundAnimation = animation
-        toVC.mainTabBarController?.setTabBar(hidden: false, animated: true, alongside: animation)
     }
 }

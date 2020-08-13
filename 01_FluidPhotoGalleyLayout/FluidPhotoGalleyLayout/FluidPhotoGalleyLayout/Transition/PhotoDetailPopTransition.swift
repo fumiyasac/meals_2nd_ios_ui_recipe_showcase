@@ -9,12 +9,13 @@
 import Foundation
 import UIKit
 
-public class PhotoDetailPopTransition: NSObject, UIViewControllerAnimatedTransitioning {
-    fileprivate let toDelegate: PhotoDetailTransitionAnimatorDelegate
-    fileprivate let photoDetailVC: PhotoDetailViewController
+final class PhotoDetailPopTransition: NSObject, UIViewControllerAnimatedTransitioning {
+    
+    private let toDelegate: PhotoDetailTransitionAnimatorDelegate
+    private let photoDetailVC: PhotoDetailViewController
 
     /// The snapshotView that is animating between the two view controllers.
-    fileprivate let transitionImageView: UIImageView = {
+    private let transitionImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
@@ -23,26 +24,23 @@ public class PhotoDetailPopTransition: NSObject, UIViewControllerAnimatedTransit
     }()
 
     /// If toDelegate isn't PhotoDetailTransitionAnimatorDelegate, returns nil.
-    init?(
-        toDelegate: Any,
-        fromPhotoDetailVC photoDetailVC: PhotoDetailViewController
-        ) {
+    
+    init?(toDelegate: Any, fromPhotoDetailVC photoDetailVC: PhotoDetailViewController) {
+
         guard let toDelegate = toDelegate as? PhotoDetailTransitionAnimatorDelegate else {
             return nil
         }
-
         self.toDelegate = toDelegate
         self.photoDetailVC = photoDetailVC
     }
 
-    public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.38
     }
 
-    public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         let fromView = transitionContext.view(forKey: .from)
         let toView = transitionContext.view(forKey: .to)
-        let toVCTabBar = transitionContext.viewController(forKey: .to)?.mainTabBarController
         let containerView = transitionContext.containerView
         let fromReferenceFrame = photoDetailVC.imageFrame()!
 
@@ -72,7 +70,6 @@ public class PhotoDetailPopTransition: NSObject, UIViewControllerAnimatedTransit
             self.toDelegate.transitionDidEnd()
             self.photoDetailVC.transitionDidEnd()
         }
-        toVCTabBar?.setTabBar(hidden: false, animated: true, alongside: animator)
         animator.startAnimation()
 
         // HACK: By delaying 0.005s, I get a layout-refresh on the toViewController,
@@ -93,15 +90,7 @@ public class PhotoDetailPopTransition: NSObject, UIViewControllerAnimatedTransit
 
     /// If we need a "dummy reference frame", let's throw the image off the bottom of the screen.
     /// Photos.app transitions to CGRect.zero, though I think that's ugly.
-    public static func defaultOffscreenFrameForDismissal(
-        transitionImageSize: CGSize,
-        screenHeight: CGFloat
-    ) -> CGRect {
-        return CGRect(
-            x: 0,
-            y: screenHeight,
-            width: transitionImageSize.width,
-            height: transitionImageSize.height
-        )
+    static func defaultOffscreenFrameForDismissal(transitionImageSize: CGSize, screenHeight: CGFloat) -> CGRect {
+        return CGRect(x: 0, y: screenHeight, width: transitionImageSize.width, height: transitionImageSize.height)
     }
 }

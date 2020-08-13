@@ -8,10 +8,18 @@
 
 import UIKit
 
-class PhotoDetailViewController: UIViewController {
+final class PhotoDetailViewController: UIViewController {
+
+    private let dismissPanGesture = UIPanGestureRecognizer()
 
     private var selectedRectanglePhoto: RectanglePhoto!
 
+    //
+    var isInteractivelyDismissing: Bool = false
+
+    //
+    weak var transitionController: PhotoDetailInteractiveDismissTransition? = nil
+    
     @IBOutlet private weak var imageView: UIImageView!
 
     func setRectanglePhoto(rectanglePhoto: RectanglePhoto) {
@@ -35,9 +43,9 @@ class PhotoDetailViewController: UIViewController {
 
     // MARK: Drag-to-dismiss
 
-    private let dismissPanGesture = UIPanGestureRecognizer()
-    public var isInteractivelyDismissing: Bool = false
-    public weak var transitionController: PhotoDetailInteractiveDismissTransition? = nil
+
+
+
 
     private func configureDismissGesture() {
         view.addGestureRecognizer(self.dismissPanGesture)
@@ -63,22 +71,27 @@ class PhotoDetailViewController: UIViewController {
     }
 }
 
+// MARK: - PhotoDetailTransitionAnimatorDelegate
+
 extension PhotoDetailViewController: PhotoDetailTransitionAnimatorDelegate {
 
+    //
     func transitionWillStart() {
         imageView.isHidden = true
     }
 
+    //
     func transitionDidEnd() {
         imageView.isHidden = false
     }
 
+    //
     func referenceImage() -> UIImage? {
         return imageView.image
     }
 
+    //
     func imageFrame() -> CGRect? {
-        let rect = CGRect.makeRect(aspectRatio: imageView.image!.size, insideRect: imageView.bounds)
-        return rect
+         return CGRect.makeRect(aspectRatio: imageView.image!.size, insideRect: imageView.bounds)
     }
 }

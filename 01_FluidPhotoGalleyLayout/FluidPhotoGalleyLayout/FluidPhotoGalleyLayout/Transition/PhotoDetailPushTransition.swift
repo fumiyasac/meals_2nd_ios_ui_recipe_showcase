@@ -10,12 +10,15 @@ import Foundation
 import UIKit
 
 /// Controls the "noninteractive push animation" used for the PhotoDetailViewController
-public class PhotoDetailPushTransition: NSObject, UIViewControllerAnimatedTransitioning {
-    fileprivate let fromDelegate: PhotoDetailTransitionAnimatorDelegate
-    fileprivate let photoDetailVC: PhotoDetailViewController
+class PhotoDetailPushTransition: NSObject, UIViewControllerAnimatedTransitioning {
+
+    private let fromDelegate: PhotoDetailTransitionAnimatorDelegate
+    private let photoDetailVC: PhotoDetailViewController
 
     /// The snapshotView that is animating between the two view controllers.
-    fileprivate let transitionImageView: UIImageView = {
+    
+    //
+    private let transitionImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
@@ -24,10 +27,9 @@ public class PhotoDetailPushTransition: NSObject, UIViewControllerAnimatedTransi
     }()
 
     /// If fromDelegate isn't PhotoDetailTransitionAnimatorDelegate, returns nil.
-    init?(
-        fromDelegate: Any,
-        toPhotoDetailVC photoDetailVC: PhotoDetailViewController
-    ) {
+    
+    //
+    init?(fromDelegate: Any, toPhotoDetailVC photoDetailVC: PhotoDetailViewController) {
         guard let fromDelegate = fromDelegate as? PhotoDetailTransitionAnimatorDelegate else {
             return nil
         }
@@ -35,17 +37,16 @@ public class PhotoDetailPushTransition: NSObject, UIViewControllerAnimatedTransi
         self.photoDetailVC = photoDetailVC
     }
 
-    public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 0.38
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+        return 0.36
     }
 
-    public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
 
         // As of 2014, you're meant to use .view(forKey:) instead of .viewController(forKey:).view to get the views.
         // It's not in the original 2013 WWDC talk, but it's in the 2014 one!
         let toView = transitionContext.view(forKey: .to)
         let fromView = transitionContext.view(forKey: .from)
-        let fromVCTabBarController = transitionContext.viewController(forKey: .from)?.mainTabBarController
 
         let containerView = transitionContext.containerView
         toView?.alpha = 0
@@ -79,7 +80,6 @@ public class PhotoDetailPushTransition: NSObject, UIViewControllerAnimatedTransi
             self.photoDetailVC.transitionDidEnd()
             self.fromDelegate.transitionDidEnd()
         }
-        fromVCTabBarController?.setTabBar(hidden: true, animated: true, alongside: animator)
         animator.startAnimation()
     }
 

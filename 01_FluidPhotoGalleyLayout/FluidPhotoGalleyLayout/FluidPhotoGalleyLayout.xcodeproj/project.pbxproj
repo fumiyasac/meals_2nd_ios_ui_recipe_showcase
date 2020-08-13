@@ -257,8 +257,8 @@
 				DE2A1CA524E0B86C00F4A787 /* MainTabBarTransition.swift */,
 				DED324FD24E1B42000ECA55E /* PhotoDetailInteractiveDismissTransition.swift */,
 				DED324FF24E1B44B00ECA55E /* PhotoDetailTransitionAnimatorDelegate.swift */,
-				DEEBACBF24E3607F002C04E8 /* PhotoDetailPopTransition.swift */,
 				DEEBACC124E36091002C04E8 /* PhotoDetailPushTransition.swift */,
+				DEEBACBF24E3607F002C04E8 /* PhotoDetailPopTransition.swift */,
 			);
 			path = Transition;
 			sourceTree = "<group>";

@@ -18,8 +18,9 @@ final class GalleryViewController: UIViewController {
         }
     }
 
-    private var lastSelectedIndexPath: IndexPath? = nil
-    
+    // MEMO: 画面遷移の動きを実現するために利用する際に押下されたIndexPathを保持するための変数
+    private var selectedIndexPath: IndexPath? = nil
+
     // MARK: - @IBOutlet
     
     @IBOutlet private weak var collectionView: UICollectionView!
@@ -101,7 +102,9 @@ extension GalleryViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let fixedIndex = indexPath.section * 4 + indexPath.row
         let rectanglePhoto = rectanglePhotos[fixedIndex]
-        self.lastSelectedIndexPath = indexPath
+
+        // MEMO: 現在選択しているindexPath値を変数へ一時的に保存する
+        selectedIndexPath = indexPath
 
         if let photoDetailVC = UIStoryboard(name: "PhotoDetail", bundle: nil).instantiateInitialViewController() as? PhotoDetailViewController {
             photoDetailVC.setRectanglePhoto(rectanglePhoto: rectanglePhoto)
@@ -109,7 +112,6 @@ extension GalleryViewController: UICollectionViewDelegate {
         }
     }
 }
-
 
 // MARK: - UICollectionViewDelegateFlowLayout
 
@@ -136,37 +138,41 @@ extension GalleryViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
+// MARK: - PhotoDetailTransitionAnimatorDelegate
+
 extension GalleryViewController: PhotoDetailTransitionAnimatorDelegate {
+
+    //
     func transitionWillStart() {
-        guard let lastSelected = self.lastSelectedIndexPath else { return }
-        collectionView.cellForItem(at: lastSelected)?.isHidden = true
+        if let selectedIndexPath = selectedIndexPath, let cell = collectionView.cellForItem(at: selectedIndexPath) as? GalleryCollectionViewCell {
+            cell.isHidden = true
+        }
     }
 
+    //
     func transitionDidEnd() {
-        guard let lastSelected = self.lastSelectedIndexPath else { return }
-        collectionView.cellForItem(at: lastSelected)?.isHidden = false
+        if let selectedIndexPath = selectedIndexPath, let cell = collectionView.cellForItem(at: selectedIndexPath) as? GalleryCollectionViewCell {
+            cell.isHidden = false
+        }
     }
 
+    //
     func referenceImage() -> UIImage? {
-        guard
-            let lastSelected = self.lastSelectedIndexPath,
-            let cell = self.collectionView.cellForItem(at: lastSelected) as? GalleryCollectionViewCell
-        else {
+        if let selectedIndexPath = selectedIndexPath, let cell = collectionView.cellForItem(at: selectedIndexPath) as? GalleryCollectionViewCell {
+            //
+            return cell.thumbnailImageView.image
+        } else {
             return nil
         }
-
-        return cell.thumbnailImageView.image
     }
 
+    //
     func imageFrame() -> CGRect? {
-        guard
-            let lastSelected = self.lastSelectedIndexPath,
-            let cell = self.collectionView.cellForItem(at: lastSelected)
-        else {
+        if let selectedIndexPath = selectedIndexPath, let cell = collectionView.cellForItem(at: selectedIndexPath) as? GalleryCollectionViewCell {
+            //
+            return collectionView.convert(cell.frame, to: self.view)
+        } else {
             return nil
         }
-
-        return self.collectionView.convert(cell.frame, to: self.view)
     }
 }
-

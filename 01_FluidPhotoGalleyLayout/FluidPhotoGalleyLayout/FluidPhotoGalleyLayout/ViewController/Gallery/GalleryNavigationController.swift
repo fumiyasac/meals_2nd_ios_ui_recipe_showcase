@@ -9,75 +9,68 @@
 import Foundation
 import UIKit
 
-/// Adds support for custom navigation transitions
-public class GalleryNavigationController: UINavigationController {
-    fileprivate var currentAnimationTransition: UIViewControllerAnimatedTransitioning? = nil
+// MEMO: カスタムトランジションが考慮されたUINavigationControllerを拡張したクラス
 
-    public override func viewDidLoad() {
+final class GalleryNavigationController: UINavigationController {
+
+    // MARK: - Property
+
+    private var currentAnimationTransition: UIViewControllerAnimatedTransitioning? = nil
+
+    // MARK: - Override
+
+    override func viewDidLoad() {
         super.viewDidLoad()
+
         self.delegate = self
-    }
-
-    /// The tab bar should be hidden if a PhotoDetailVC is anywhere in the stack.
-    public var shouldTabBarBeHidden: Bool {
-        let photoDetailInNavStack = self.viewControllers.contains(where: { (vc) -> Bool in
-            return vc.isKind(of: PhotoDetailViewController.self)
-        })
-
-        let isPoppingFromPhotoDetail =
-            (self.currentAnimationTransition?.isKind(of: PhotoDetailPopTransition.self) ?? false)
-
-        if isPoppingFromPhotoDetail {
-            return false
-        } else {
-            return photoDetailInNavStack
-        }
     }
 }
 
-extension GalleryNavigationController: UINavigationControllerDelegate {
-    public func navigationController(
-        _ navigationController: UINavigationController,
-        animationControllerFor operation: UINavigationController.Operation,
-        from fromVC: UIViewController,
-        to toVC: UIViewController
-        ) -> UIViewControllerAnimatedTransitioning? {
+ // MARK: - GalleryNavigationController
 
-        let result: UIViewControllerAnimatedTransitioning?
-        if
-            let photoDetailVC = toVC as? PhotoDetailViewController,
-            operation == .push
-        {
-            result = PhotoDetailPushTransition(fromDelegate: fromVC, toPhotoDetailVC: photoDetailVC)
-        } else if
-            let photoDetailVC = fromVC as? PhotoDetailViewController,
-            operation == .pop
-        {
-            if photoDetailVC.isInteractivelyDismissing {
-                result = PhotoDetailInteractiveDismissTransition(fromDelegate: photoDetailVC, toDelegate: toVC)
-            } else {
-                result = PhotoDetailPopTransition(toDelegate: toVC, fromPhotoDetailVC: photoDetailVC)
+extension GalleryNavigationController: UINavigationControllerDelegate {
+
+    //
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+
+        var result: UIViewControllerAnimatedTransitioning? = nil
+
+        //
+        switch operation {
+        case .push:
+
+            //
+            if let photoDetailVC = toVC as? PhotoDetailViewController {
+                result = PhotoDetailPushTransition(fromDelegate: fromVC, toPhotoDetailVC: photoDetailVC)
             }
-        } else {
-            result = nil
+        case .pop:
+
+            //
+            if let photoDetailVC = fromVC as? PhotoDetailViewController {
+                if photoDetailVC.isInteractivelyDismissing {
+                    result = PhotoDetailInteractiveDismissTransition(fromDelegate: photoDetailVC, toDelegate: toVC)
+                } else {
+                    result = PhotoDetailPopTransition(toDelegate: toVC, fromPhotoDetailVC: photoDetailVC)
+                }
+            }
+        default:
+            break
         }
-        self.currentAnimationTransition = result
+
+        //
+        currentAnimationTransition = result
+
         return result
     }
 
-    public func navigationController(
-        _ navigationController: UINavigationController,
-        interactionControllerFor animationController: UIViewControllerAnimatedTransitioning
-    ) -> UIViewControllerInteractiveTransitioning? {
-        return self.currentAnimationTransition as? UIViewControllerInteractiveTransitioning
+    //
+    func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        return currentAnimationTransition as? UIViewControllerInteractiveTransitioning
     }
 
-    public func navigationController(
-        _ navigationController: UINavigationController,
-        didShow viewController: UIViewController,
-        animated: Bool
-    ) {
-        self.currentAnimationTransition = nil
+    //
+    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+        currentAnimationTransition = nil
     }
 }
 

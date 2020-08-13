@@ -9,20 +9,25 @@
 import Foundation
 import UIKit
 
-/// A way that view controllers can provide information about the photo-detail transition animation.
-public protocol PhotoDetailTransitionAnimatorDelegate: class {
+// MEMO: サムネイル写真が浮き上がってくるような表現をするカスタムトランジションを実現するために必要な遷移元の情報を取得するためのプロトコル定義
+// 参考: 実装の参考にした記事とリポジトリ
+// https://devsign.co/notes/navigation-transitions-iv
+// https://github.com/bryanjclark/devsign-nav-transitions
 
-    /// Called just-before the transition animation begins. Use this to prepare your VC for the transition.
+// MARK: - Protocol
+
+protocol PhotoDetailTransitionAnimatorDelegate: class {
+
+    // 画面遷移処理が開始した際に実行される処理
+    // MEMO: 遷移先から前の画面へ戻る時のみPhotoDetailInteractiveDismissTransitionで途中で中断することも考慮している
     func transitionWillStart()
 
-    /// Called right-after the transition animation ends. Use this to clean up your VC after the transition.
+    // 画面遷移処理が終了した際に実行される処理
     func transitionDidEnd()
 
-    /// The animator needs a UIImageView for the transition;
-    /// eg the Photo Detail screen should provide a snapshotView of its image,
-    /// and a collectionView should do the same for its image views.
+    // 画面遷移実行時にサムネイル画像のスナップシャットとなるUIImageViewの表示内容
     func referenceImage() -> UIImage?
 
-    /// The frame for the imageView provided in `referenceImageView(for:)`
+    // 画面遷移実行時にサムネイル画像のスナップシャットとなるUIImageViewの大きさ
     func imageFrame() -> CGRect?
 }

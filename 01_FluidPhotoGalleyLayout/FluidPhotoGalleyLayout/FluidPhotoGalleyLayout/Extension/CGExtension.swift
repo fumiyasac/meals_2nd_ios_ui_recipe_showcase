@@ -31,8 +31,13 @@ public extension CGFloat {
     }
 }
 
-public extension CGSize {
-    /// Scales up a point-size CGSize into its pixel representation.
+// MARK: - CGSize Extension
+
+extension CGSize {
+
+    // MARK: - Property
+
+    // 画面倍率を考慮したCGSizeを取得する
     var pixelSize: CGSize {
         let scale = UIScreen.main.scale
         return CGSize(width: self.width * scale, height: self.height * scale)
