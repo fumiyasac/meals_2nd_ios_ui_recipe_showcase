@@ -32,7 +32,7 @@ final class GalleryNavigationController: UINavigationController {
 extension GalleryNavigationController: UINavigationControllerDelegate {
 
     // MEMO: UINavigationControllerのNavigationスタックに追加または削除する際（Push or Pop）の画面切り替え時に適用するアニメーションを定義する
-    // → ここではインタラクティブなアニメーション（ここではUIPanGestureRecognizerを伴って画面の状態が変化しうるアニメーション）を含まないアニメーションクラスの適用に関する設定をする
+    // → ここではインタラクティブな￥制御を伴うアニメーション（ここではUIPanGestureRecognizerを伴って画面の状態が変化しうるアニメーション）を含まないアニメーションクラスの適用に関する設定をする
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
 
         var result: UIViewControllerAnimatedTransitioning? = nil
@@ -48,7 +48,7 @@ extension GalleryNavigationController: UINavigationControllerDelegate {
 
         case .pop:
 
-            // Popでの画面遷移時には、インタラクティブなアニメーション（ここではUIPanGestureRecognizerを伴って画面の状態が変化しうるアニメーション）が発火可否によって適用するアニメーションが異なる
+            // Popでの画面遷移時には、インタラクティブな制御を伴うアニメーション（ここではUIPanGestureRecognizerを伴って画面の状態が変化しうるアニメーション）が発火可否によって適用するアニメーションが異なる
             if let photoDetailVC = fromVC as? PhotoDetailViewController {
 
                 // MEMO: Pushでの画面遷移時には、PhotoDetailViewControllerに定義したPanGestureRecognizerで発動したDismiss時のアニメーション発火状況に応じて変化する
@@ -70,7 +70,7 @@ extension GalleryNavigationController: UINavigationControllerDelegate {
     }
 
     // MEMO: UINavigationControllerのNavigationスタックに追加または削除する際（Push or Pop）の画面切り替え時に適用するアニメーションを定義する
-    // → ここではインタラクティブなアニメーション（ここではUIPanGestureRecognizerを伴って画面の状態が変化しうるアニメーション）を含むアニメーションクラスの適用に関する設定をする
+    // → ここではインタラクティブな制御を伴うアニメーション（ここではUIPanGestureRecognizerを伴って画面の状態が変化しうるアニメーション）を含むアニメーションクラスの適用に関する設定をする
     func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
         return currentAnimationTransition as? UIViewControllerInteractiveTransitioning
     }

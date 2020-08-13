@@ -66,7 +66,7 @@ extension PhotoDetailPushTransition: UIViewControllerAnimatedTransitioning {
         }
 
         // アニメーションの実体となるContainerViewに必要なものを追加する
-        // MEMO: 遷移元と遷移先のView要素を追加する
+        // MEMO: 画面遷移元と画面遷移先のView要素を追加する
         // → 遷移先はアルファ値が0の状態でContainerViewへ追加する
         let containerView = transitionContext.containerView
         toView.alpha = 0
@@ -82,7 +82,7 @@ extension PhotoDetailPushTransition: UIViewControllerAnimatedTransitioning {
         // 画面遷移時にサムネイル画像が動くアニメーションを実現するためのスナップショットとなるUIImageViewを追加する
         containerView.addSubview(transitionImageView)
 
-        // 遷移元と遷移先に定義したPhotoDetailTransitionAnimatorDelegateの画面遷移開始時の処理を実行する
+        // 画面遷移元と画面遷移先に定義したPhotoDetailTransitionAnimatorDelegateの画面遷移開始時の処理を実行する
         fromDelegate.transitionWillStart()
         photoDetailVC.transitionWillStart()
 
@@ -112,7 +112,7 @@ extension PhotoDetailPushTransition: UIViewControllerAnimatedTransitioning {
             // 画面遷移が完了したことを伝える
             transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
 
-            // 遷移元と遷移先に定義したPhotoDetailTransitionAnimatorDelegateの画面遷移終了時の処理を実行する
+            // 画面遷移元と画面遷移先に定義したPhotoDetailTransitionAnimatorDelegateの画面遷移終了時の処理を実行する
             self.photoDetailVC.transitionDidEnd()
             self.fromDelegate.transitionDidEnd()
         }

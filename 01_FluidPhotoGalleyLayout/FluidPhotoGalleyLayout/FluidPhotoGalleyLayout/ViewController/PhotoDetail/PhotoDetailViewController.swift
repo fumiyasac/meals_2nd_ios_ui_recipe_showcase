@@ -65,16 +65,16 @@ final class PhotoDetailViewController: UIViewController {
 
         // Dismiss時のアニメーション発火状況をtrueにして遷移元へ戻る画面遷移を試みる
         case .began:
+
             isInteractivelyDismissing = true
             self.navigationController?.popViewController(animated: true)
 
         // Dismiss時のアニメーション発火状況をfalseにする
         case .cancelled, .failed, .ended:
+
             isInteractivelyDismissing = false
 
         // それ以外の場合には特に処理は実施しない
-        case .changed, .possible:
-            break
         default:
             break
         }

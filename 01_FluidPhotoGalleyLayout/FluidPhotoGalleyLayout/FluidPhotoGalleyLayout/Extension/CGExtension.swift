@@ -12,11 +12,12 @@ import UIKit
 // MARK: - CGFloat Extension
 
 extension CGFloat {
-    /// Returns the value, scaled-and-shifted to the targetRange.
-    /// If no target range is provided, we assume the unit range (0, 1)
 
     // MARK: - Static Function
 
+    // 第1引数で渡された値が第2引数で渡している範囲から何％の位置にあるかを取得する
+    // value: 比べる対象となる値
+    // inRange: 範囲の最大値＆最小値を定義したタプル
     static func scaleAndShift(value: CGFloat, inRange: (min: CGFloat, max: CGFloat), toRange: (min: CGFloat, max: CGFloat) = (min: 0.0, max: 1.0)) -> CGFloat {
         if value < inRange.min {
             return toRange.min
@@ -45,11 +46,13 @@ extension CGSize {
 // MARK: - CGRect Extension
 
 extension CGRect {
-    /// Kinda like AVFoundation.AVMakeRect, but handles tall-skinny aspect ratios differently.
-    /// Returns a rectangle of the same aspect ratio, but scaleAspectFit inside the other rectangle.
 
     // MARK: - Static Function
 
+    // 実際の要素と配置されている要素に合わせた要素の割合を考慮したサイズを算出する
+    // MEMO: PhotoDetailViewControllerではこのように活用しています。
+    // aspectRatio: UIImageViewのUIImageの実際のサイズ
+    // insideRect: 画面内に配置しているUIImageViewのサイズ
     static func makeRect(aspectRatio: CGSize, insideRect rect: CGRect) -> CGRect {
         let viewRatio = rect.width / rect.height
         let imageRatio = aspectRatio.width / aspectRatio.height
