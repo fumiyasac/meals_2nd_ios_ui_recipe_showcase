@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-final class PhotoDetailPopTransition: NSObject, UIViewControllerAnimatedTransitioning {
+final class PhotoDetailPopTransition: NSObject {
 
     // MARK: - Property
 
@@ -38,7 +38,18 @@ final class PhotoDetailPopTransition: NSObject, UIViewControllerAnimatedTransiti
         self.photoDetailVC = photoDetailVC
     }
 
-    // MARK: - UIViewControllerAnimatedTransitioning
+    // MARK: - Static Function
+
+    // 画面遷移アニメーションに必要なダミーのframe値を算出する
+    // MEMO: 拡大画像表示をする画面(PhotoDetailViewController)を元に算出した値
+    static func defaultOffscreenFrameForDismissal(transitionImageSize: CGSize, screenHeight: CGFloat) -> CGRect {
+        return CGRect(x: 0, y: screenHeight, width: transitionImageSize.width, height: transitionImageSize.height)
+    }
+}
+
+// MARK: - UIViewControllerAnimatedTransitioning
+
+extension PhotoDetailPopTransition: UIViewControllerAnimatedTransitioning {
 
     // アニメーションの時間を定義する
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
@@ -126,13 +137,5 @@ final class PhotoDetailPopTransition: NSObject, UIViewControllerAnimatedTransiti
                 }
             }
         }
-    }
-
-    // MARK: - Static Function
-
-    // 画面遷移アニメーションに必要なダミーのframe値を算出する
-    // MEMO: 拡大画像表示をする画面(PhotoDetailViewController)を元に算出した値
-    static func defaultOffscreenFrameForDismissal(transitionImageSize: CGSize, screenHeight: CGFloat) -> CGRect {
-        return CGRect(x: 0, y: screenHeight, width: transitionImageSize.width, height: transitionImageSize.height)
     }
 }

@@ -12,7 +12,7 @@ import UIKit
 // MEMO: UINavigationControllerのPush遷移実行時のカスタムトランジションのクラス
 // → この画面遷移クラスはGalleryNavigationControllerで適用する
 
-class PhotoDetailPushTransition: NSObject, UIViewControllerAnimatedTransitioning {
+final class PhotoDetailPushTransition: NSObject {
 
     // MARK: - Property
 
@@ -40,8 +40,11 @@ class PhotoDetailPushTransition: NSObject, UIViewControllerAnimatedTransitioning
         self.fromDelegate = fromDelegate
         self.photoDetailVC = photoDetailVC
     }
+}
 
-    // MARK: - UIViewControllerAnimatedTransitioning
+// MARK: - UIViewControllerAnimatedTransitioning
+
+extension PhotoDetailPushTransition: UIViewControllerAnimatedTransitioning {
 
     // アニメーションの時間を定義する
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
