@@ -9,17 +9,15 @@
 import Foundation
 import UIKit
 
-public extension CGFloat {
+// MARK: - CGFloat Extension
+
+extension CGFloat {
     /// Returns the value, scaled-and-shifted to the targetRange.
     /// If no target range is provided, we assume the unit range (0, 1)
-    static func scaleAndShift(
-        value: CGFloat,
-        inRange: (min: CGFloat, max: CGFloat),
-        toRange: (min: CGFloat, max: CGFloat) = (min: 0.0, max: 1.0)
-        ) -> CGFloat {
-        assert(inRange.max > inRange.min)
-        assert(toRange.max > toRange.min)
 
+    // MARK: - Static Function
+
+    static func scaleAndShift(value: CGFloat, inRange: (min: CGFloat, max: CGFloat), toRange: (min: CGFloat, max: CGFloat) = (min: 0.0, max: 1.0)) -> CGFloat {
         if value < inRange.min {
             return toRange.min
         } else if value > inRange.max {
@@ -44,9 +42,14 @@ extension CGSize {
     }
 }
 
-public extension CGRect {
+// MARK: - CGRect Extension
+
+extension CGRect {
     /// Kinda like AVFoundation.AVMakeRect, but handles tall-skinny aspect ratios differently.
     /// Returns a rectangle of the same aspect ratio, but scaleAspectFit inside the other rectangle.
+
+    // MARK: - Static Function
+
     static func makeRect(aspectRatio: CGSize, insideRect rect: CGRect) -> CGRect {
         let viewRatio = rect.width / rect.height
         let imageRatio = aspectRatio.width / aspectRatio.height

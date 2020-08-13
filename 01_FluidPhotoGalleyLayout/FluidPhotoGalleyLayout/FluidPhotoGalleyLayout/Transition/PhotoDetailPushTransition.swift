@@ -9,15 +9,20 @@
 import Foundation
 import UIKit
 
-/// Controls the "noninteractive push animation" used for the PhotoDetailViewController
+// MEMO: UINavigationControllerのPush遷移実行時のカスタムトランジションのクラス
+// → この画面遷移クラスはGalleryNavigationControllerで適用する
+
 class PhotoDetailPushTransition: NSObject, UIViewControllerAnimatedTransitioning {
 
+    // MARK: - Property
+
+    // MEMO: イニシャライザの引数で引き渡される内容
+    // → fromDelegate: 画面遷移元に定義したPhotoDetailTransitionAnimatorDelegateのプロトコル定義
+    // → photoDetailVC: 画面遷移先となるPhotoDetailViewController
     private let fromDelegate: PhotoDetailTransitionAnimatorDelegate
     private let photoDetailVC: PhotoDetailViewController
-
-    /// The snapshotView that is animating between the two view controllers.
     
-    //
+    // MEMO: 画面遷移時にサムネイル画像が動くアニメーションを実現するためのスナップショットとなるUIImageView
     private let transitionImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
@@ -26,9 +31,8 @@ class PhotoDetailPushTransition: NSObject, UIViewControllerAnimatedTransitioning
         return imageView
     }()
 
-    /// If fromDelegate isn't PhotoDetailTransitionAnimatorDelegate, returns nil.
-    
-    //
+    // MARK: - Initializer
+
     init?(fromDelegate: Any, toPhotoDetailVC photoDetailVC: PhotoDetailViewController) {
         guard let fromDelegate = fromDelegate as? PhotoDetailTransitionAnimatorDelegate else {
             return nil
@@ -37,63 +41,80 @@ class PhotoDetailPushTransition: NSObject, UIViewControllerAnimatedTransitioning
         self.photoDetailVC = photoDetailVC
     }
 
+    // MARK: - UIViewControllerAnimatedTransitioning
+
+    // アニメーションの時間を定義する
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 0.36
+        return 0.24
     }
 
+    // アニメーションの実装を定義する
+    // 画面遷移コンテキスト(UIViewControllerContextTransitioning)を利用する
+    // → 遷移元や遷移先のViewControllerやそのほか関連する情報が格納されているもの
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
 
-        // As of 2014, you're meant to use .view(forKey:) instead of .viewController(forKey:).view to get the views.
-        // It's not in the original 2013 WWDC talk, but it's in the 2014 one!
-        let toView = transitionContext.view(forKey: .to)
-        let fromView = transitionContext.view(forKey: .from)
-
-        let containerView = transitionContext.containerView
-        toView?.alpha = 0
-        [fromView, toView]
-            .compactMap { $0 }
-            .forEach {
-                containerView.addSubview($0)
+        // コンテキストを元に遷移先と遷移元のViewインスタンスを取得する
+        // MEMO: 取得できなかった場合は以降の処理を実施しない
+        guard let fromView = transitionContext.view(forKey: .from) else {
+            return
         }
+        guard let toView = transitionContext.view(forKey: .to) else {
+            return
+        }
+
+        // アニメーションの実体となるContainerViewに必要なものを追加する
+        // MEMO: 遷移元と遷移先のView要素を追加する
+        // → 遷移先はアルファ値が0の状態でContainerViewへ追加する
+        let containerView = transitionContext.containerView
+        toView.alpha = 0
+        containerView.addSubview(fromView)
+        containerView.addSubview(toView)
+
+        // 画面遷移時にサムネイル画像が動くアニメーションを実現するためのスナップショットとなるUIImageViewを設定する
+        // MEMO: スナップショットとなるUIImageViewに必要な情報は画面遷移元に定義したPhotoDetailTransitionAnimatorDelegateから取得する
         let transitionImage = fromDelegate.referenceImage()!
         transitionImageView.image = transitionImage
-        transitionImageView.frame = fromDelegate.imageFrame()
-            ?? PhotoDetailPushTransition.defaultOffscreenFrameForPresentation(image: transitionImage, forView: toView!)
-        let toReferenceFrame = PhotoDetailPushTransition.calculateZoomInImageFrame(image: transitionImage, forView: toView!)
-        containerView.addSubview(self.transitionImageView)
+        transitionImageView.frame = fromDelegate.imageFrame()!
 
-        self.fromDelegate.transitionWillStart()
-        self.photoDetailVC.transitionWillStart()
+        // 画面遷移時にサムネイル画像が動くアニメーションを実現するためのスナップショットとなるUIImageViewを追加する
+        containerView.addSubview(transitionImageView)
 
-        let duration = self.transitionDuration(using: transitionContext)
-        let spring: CGFloat = 0.95
-        let animator = UIViewPropertyAnimator(duration: duration, dampingRatio: spring) {
+        // 遷移元と遷移先に定義したPhotoDetailTransitionAnimatorDelegateの画面遷移開始時の処理を実行する
+        fromDelegate.transitionWillStart()
+        photoDetailVC.transitionWillStart()
+
+        // 画面遷移が完了した際のサムネイル画像の大きさを算出する
+        // MEMO: 別途CGExtension.swiftに定義しているメソッドで実際の値を算出する
+        let toReferenceFrame = CGRect.makeRect(aspectRatio: transitionImage.size, insideRect: toView.bounds)
+
+        // 画面遷移時に実行するUIViewPropertyAnimatorを定義する
+        // MEMO: クロージャー内に完了した時のView要素の状態を追加する
+        let animator = UIViewPropertyAnimator(duration: transitionDuration(using: transitionContext), dampingRatio: 0.93) {
+
+            // スナップショットとなるUIImageViewを遷移先に配置したUIImageViewと表示が等しくなるようにする
             self.transitionImageView.frame = toReferenceFrame
-            toView?.alpha = 1
-        }
-        animator.addCompletion { (position) in
-            assert(position == .end)
 
+            // 遷移先の画面のアルファ値を1にする
+            toView.alpha = 1
+        }
+
+        // 画面遷移アニメーションが完了した際に実行する処理を定義する
+        // MEMO: クロージャー内に完了時に実施する処理を追加する
+        animator.addCompletion { _ in
+
+            // スナップショットとなるUIImageViewを画面から削除する
             self.transitionImageView.removeFromSuperview()
             self.transitionImageView.image = nil
+
+            // 画面遷移が完了したことを伝える
             transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+
+            // 遷移元と遷移先に定義したPhotoDetailTransitionAnimatorDelegateの画面遷移終了時の処理を実行する
             self.photoDetailVC.transitionDidEnd()
             self.fromDelegate.transitionDidEnd()
         }
+
+        // 画面遷移アニメーションを実行する
         animator.startAnimation()
-    }
-
-    /// If no location is provided by the fromDelegate, we'll use an offscreen-bottom position for the image.
-    private static func defaultOffscreenFrameForPresentation(image: UIImage, forView view: UIView) -> CGRect {
-        var result = PhotoDetailPushTransition.calculateZoomInImageFrame(image: image, forView: view)
-        result.origin.y = view.bounds.height
-        return result
-    }
-
-    /// Because the photoDetailVC isn't laid out yet, we calculate a default rect here.
-    // TODO: Move this into PhotoDetailViewController, probably!
-    private static func calculateZoomInImageFrame(image: UIImage, forView view: UIView) -> CGRect {
-        let rect = CGRect.makeRect(aspectRatio: image.size, insideRect: view.bounds)
-        return rect
     }
 }
