@@ -9,29 +9,31 @@
 import Foundation
 import UIKit
 
+// https://speakerdeck.com/shunkitan/hong-rixin-di-falseliang-i-interactive-transitionwomasutasiyou-iosdc-2017
+
 /// Manages the interactive transition animation for the drag-to-dismiss gesture
 /// in Locket Photos — designed to mimic the same gesture from Apple's Photos app.
 
 final class PhotoDetailInteractiveDismissTransition: NSObject {
 
     /// The from- and to- viewControllers can conform to the protocol in order to get updates and vend snapshotViews
-    fileprivate let fromDelegate: PhotoDetailTransitionAnimatorDelegate
-    fileprivate weak var toDelegate: PhotoDetailTransitionAnimatorDelegate?
+    private let fromDelegate: PhotoDetailTransitionAnimatorDelegate
+    private weak var toDelegate: PhotoDetailTransitionAnimatorDelegate?
 
     /// The background animation is the "photo-detail background opacity goes to zero"
-    fileprivate var backgroundAnimation: UIViewPropertyAnimator? = nil
+    private var backgroundAnimation: UIViewPropertyAnimator? = nil
 
     // NOTE: To avoid writing tons of boilerplate that pulls these values out of
     // the transitionContext, I'm just gonna cache them here.
-    fileprivate var transitionContext: UIViewControllerContextTransitioning? = nil
-    fileprivate var fromReferenceImageViewFrame: CGRect? = nil
-    fileprivate var toReferenceImageViewFrame: CGRect? = nil
+    private var transitionContext: UIViewControllerContextTransitioning? = nil
+    private var fromReferenceImageViewFrame: CGRect? = nil
+    private var toReferenceImageViewFrame: CGRect? = nil
 
-    fileprivate weak var fromVC: PhotoDetailViewController? = nil
-    fileprivate weak var toVC: UIViewController? = nil
+    private weak var fromVC: PhotoDetailViewController? = nil
+    private weak var toVC: UIViewController? = nil
 
     /// The snapshotView that is animating between the two view controllers.
-    fileprivate let transitionImageView: UIImageView = {
+    private let transitionImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
@@ -96,10 +98,10 @@ final class PhotoDetailInteractiveDismissTransition: NSObject {
         let completionDuration: Double
         let completionDamping: CGFloat
         if didCancel {
-            completionDuration = 0.45
+            completionDuration = 0.46
             completionDamping = 0.75
         } else {
-            completionDuration = 0.37
+            completionDuration = 0.36
             completionDamping = 0.90
         }
 
@@ -153,7 +155,7 @@ final class PhotoDetailInteractiveDismissTransition: NSObject {
 
     /// The transition image scales down from 100% to a minimum of 68%,
     /// based on the percentage-complete of the gesture.
-    func transitionImageScaleFor(percentageComplete: CGFloat) -> CGFloat {
+    private func transitionImageScaleFor(percentageComplete: CGFloat) -> CGFloat {
         let minScale = CGFloat(0.68)
         let result = 1 - (1 - minScale) * percentageComplete
         return result

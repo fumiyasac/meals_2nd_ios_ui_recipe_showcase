@@ -142,34 +142,37 @@ extension GalleryViewController: UICollectionViewDelegateFlowLayout {
 
 extension GalleryViewController: PhotoDetailTransitionAnimatorDelegate {
 
-    //
+    // 画面遷移処理が開始した際に実行される処理
+    // → 選択したセルを見えない状態にする
     func transitionWillStart() {
         if let selectedIndexPath = selectedIndexPath, let cell = collectionView.cellForItem(at: selectedIndexPath) as? GalleryCollectionViewCell {
             cell.isHidden = true
         }
     }
 
-    //
+    // 画面遷移処理が終了した際に実行される処理
+    // → 選択したセルを見える状態にする
     func transitionDidEnd() {
         if let selectedIndexPath = selectedIndexPath, let cell = collectionView.cellForItem(at: selectedIndexPath) as? GalleryCollectionViewCell {
             cell.isHidden = false
         }
     }
 
-    //
+    // 画面遷移実行時にサムネイル画像のスナップシャットとなるUIImageViewの表示内容
+    // → 選択したセルに配置されているUIImageViewのUIImageを割り当てる
     func referenceImage() -> UIImage? {
         if let selectedIndexPath = selectedIndexPath, let cell = collectionView.cellForItem(at: selectedIndexPath) as? GalleryCollectionViewCell {
-            //
             return cell.thumbnailImageView.image
         } else {
             return nil
         }
     }
 
-    //
+    // 画面遷移実行時にサムネイル画像のスナップシャットとなるUIImageViewの大きさ
+    // → 選択したセルに配置されているUIImageViewの大きさを算出する
     func imageFrame() -> CGRect? {
         if let selectedIndexPath = selectedIndexPath, let cell = collectionView.cellForItem(at: selectedIndexPath) as? GalleryCollectionViewCell {
-            //
+            // MEMO: セルに配置したUIImageViewはセルの大きさと等しいので、セルのframe値をおおもとの画面に換算して算出している
             return collectionView.convert(cell.frame, to: self.view)
         } else {
             return nil

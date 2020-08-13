@@ -39,10 +39,6 @@ final class GalleryCollectionViewCell: UICollectionViewCell {
         thumbnailImageView.image = UIImage(named: rectanglePhoto.thumbnailName)
     }
 
-    public func setHighlighted(_ highlighted: Bool) {
-        self.thumbnailImageView.isHidden = !highlighted
-    }
-
     // MARK: - Private Function
 
     private func setupGalleryCollectionViewCell() {
