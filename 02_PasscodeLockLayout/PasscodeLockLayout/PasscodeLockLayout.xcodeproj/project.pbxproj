@@ -3,14 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		D0410B5D977FC715614CD2CB /* Pods_PasscodeLockLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CCFF60414935C6690E21319 /* Pods_PasscodeLockLayout.framework */; };
 		DE58528924E59A9A0001F0D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58528824E59A9A0001F0D5 /* AppDelegate.swift */; };
 		DE58528B24E59A9A0001F0D5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58528A24E59A9A0001F0D5 /* SceneDelegate.swift */; };
-		DE58528D24E59A9A0001F0D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58528C24E59A9A0001F0D5 /* ViewController.swift */; };
 		DE58529024E59A9A0001F0D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE58528E24E59A9A0001F0D5 /* Main.storyboard */; };
 		DE58529224E59AA60001F0D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE58529124E59AA60001F0D5 /* Assets.xcassets */; };
 		DE58529524E59AA60001F0D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE58529324E59AA60001F0D5 /* LaunchScreen.storyboard */; };
@@ -20,7 +19,6 @@
 		DE5852C624E5A2FE0001F0D5 /* CryptoAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5852C524E5A2FE0001F0D5 /* CryptoAlgorithm.swift */; };
 		DE5852C824E5A31F0001F0D5 /* LocalAuthenticationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5852C724E5A31F0001F0D5 /* LocalAuthenticationType.swift */; };
 		DE5852CA24E5A3570001F0D5 /* InputPasscodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5852C924E5A3570001F0D5 /* InputPasscodeType.swift */; };
-		DE5852CC24E5A3750001F0D5 /* TabBarItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5852CB24E5A3750001F0D5 /* TabBarItemType.swift */; };
 		DE5852CE24E5A39A0001F0D5 /* NSObjectProtocolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5852CD24E5A39A0001F0D5 /* NSObjectProtocolExtension.swift */; };
 		DE5852D024E5A3B10001F0D5 /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5852CF24E5A3B10001F0D5 /* UICollectionViewExtension.swift */; };
 		DE5852D224E5A3C70001F0D5 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5852D124E5A3C70001F0D5 /* UIColorExtension.swift */; };
@@ -32,6 +30,30 @@
 		DE5852DF24E5AD710001F0D5 /* UserDefaultStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5852DE24E5AD710001F0D5 /* UserDefaultStore.swift */; };
 		DE5852E124E5AE770001F0D5 /* PasscodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5852E024E5AE770001F0D5 /* PasscodeModel.swift */; };
 		DE5852E324E5B1390001F0D5 /* StickyStyleFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5852E224E5B1390001F0D5 /* StickyStyleFlowLayout.swift */; };
+		DE5852E524E608A10001F0D5 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5852E424E608A10001F0D5 /* MainTabBarController.swift */; };
+		DE5852F424E69FCB0001F0D5 /* RealmStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5852F324E69FCB0001F0D5 /* RealmStore.swift */; };
+		DE5852F624E6B0780001F0D5 /* Curriculum.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE5852F524E6B0770001F0D5 /* Curriculum.storyboard */; };
+		DE5852F824E6B0870001F0D5 /* Course.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE5852F724E6B0870001F0D5 /* Course.storyboard */; };
+		DE5852FA24E6B0DC0001F0D5 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE5852F924E6B0DC0001F0D5 /* Profile.storyboard */; };
+		DE5852FE24E6B1060001F0D5 /* Stock.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE5852FD24E6B1060001F0D5 /* Stock.storyboard */; };
+		DE58530024E6F1E80001F0D5 /* CurriculumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5852FF24E6F1E80001F0D5 /* CurriculumViewController.swift */; };
+		DE58530424E6F2250001F0D5 /* CourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58530324E6F2250001F0D5 /* CourseViewController.swift */; };
+		DE58530824E6F2600001F0D5 /* StockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58530724E6F2600001F0D5 /* StockViewController.swift */; };
+		DE58530B24E6F2950001F0D5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58530A24E6F2950001F0D5 /* ProfileViewController.swift */; };
+		DE58530E24E73DA00001F0D5 /* CurriculumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58530C24E73DA00001F0D5 /* CurriculumTableViewCell.swift */; };
+		DE58530F24E73DA00001F0D5 /* CurriculumTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE58530D24E73DA00001F0D5 /* CurriculumTableViewCell.xib */; };
+		DE58531224E742260001F0D5 /* CurriculumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58531124E742260001F0D5 /* CurriculumModel.swift */; };
+		DE58531524E7790D0001F0D5 /* CourseListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58531324E7790D0001F0D5 /* CourseListCollectionViewCell.swift */; };
+		DE58531624E7790D0001F0D5 /* CourseListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE58531424E7790D0001F0D5 /* CourseListCollectionViewCell.xib */; };
+		DE58531924E779290001F0D5 /* StockCourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58531724E779290001F0D5 /* StockCourseTableViewCell.swift */; };
+		DE58531A24E779290001F0D5 /* StockCourseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE58531824E779290001F0D5 /* StockCourseTableViewCell.xib */; };
+		DE58531C24E789B20001F0D5 /* StockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58531B24E789B20001F0D5 /* StockModel.swift */; };
+		DE58531E24E78A8B0001F0D5 /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58531D24E78A8B0001F0D5 /* NotificationExtension.swift */; };
+		DE58532024E791B80001F0D5 /* CurriculumPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58531F24E791B80001F0D5 /* CurriculumPresenter.swift */; };
+		DE58532224E7A1350001F0D5 /* curriculum.json in Resources */ = {isa = PBXBuildFile; fileRef = DE58532124E7A1340001F0D5 /* curriculum.json */; };
+		DE58532424E7A1C20001F0D5 /* CourseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58532324E7A1C20001F0D5 /* CourseModel.swift */; };
+		DE58532624E7A93C0001F0D5 /* CoursePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58532524E7A93C0001F0D5 /* CoursePresenter.swift */; };
+		DE58532824E7B01A0001F0D5 /* UILabelDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58532724E7B01A0001F0D5 /* UILabelDecorator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +80,6 @@
 		DE58528524E59A9A0001F0D5 /* PasscodeLockLayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PasscodeLockLayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE58528824E59A9A0001F0D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE58528A24E59A9A0001F0D5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DE58528C24E59A9A0001F0D5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DE58528F24E59A9A0001F0D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DE58529124E59AA60001F0D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE58529424E59AA60001F0D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -74,7 +95,6 @@
 		DE5852C524E5A2FE0001F0D5 /* CryptoAlgorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoAlgorithm.swift; sourceTree = "<group>"; };
 		DE5852C724E5A31F0001F0D5 /* LocalAuthenticationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAuthenticationType.swift; sourceTree = "<group>"; };
 		DE5852C924E5A3570001F0D5 /* InputPasscodeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPasscodeType.swift; sourceTree = "<group>"; };
-		DE5852CB24E5A3750001F0D5 /* TabBarItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemType.swift; sourceTree = "<group>"; };
 		DE5852CD24E5A39A0001F0D5 /* NSObjectProtocolExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectProtocolExtension.swift; sourceTree = "<group>"; };
 		DE5852CF24E5A3B10001F0D5 /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
 		DE5852D124E5A3C70001F0D5 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
@@ -86,6 +106,30 @@
 		DE5852DE24E5AD710001F0D5 /* UserDefaultStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultStore.swift; sourceTree = "<group>"; };
 		DE5852E024E5AE770001F0D5 /* PasscodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeModel.swift; sourceTree = "<group>"; };
 		DE5852E224E5B1390001F0D5 /* StickyStyleFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyStyleFlowLayout.swift; sourceTree = "<group>"; };
+		DE5852E424E608A10001F0D5 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		DE5852F324E69FCB0001F0D5 /* RealmStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmStore.swift; sourceTree = "<group>"; };
+		DE5852F524E6B0770001F0D5 /* Curriculum.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Curriculum.storyboard; sourceTree = "<group>"; };
+		DE5852F724E6B0870001F0D5 /* Course.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Course.storyboard; sourceTree = "<group>"; };
+		DE5852F924E6B0DC0001F0D5 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		DE5852FD24E6B1060001F0D5 /* Stock.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Stock.storyboard; sourceTree = "<group>"; };
+		DE5852FF24E6F1E80001F0D5 /* CurriculumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurriculumViewController.swift; sourceTree = "<group>"; };
+		DE58530324E6F2250001F0D5 /* CourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewController.swift; sourceTree = "<group>"; };
+		DE58530724E6F2600001F0D5 /* StockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockViewController.swift; sourceTree = "<group>"; };
+		DE58530A24E6F2950001F0D5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		DE58530C24E73DA00001F0D5 /* CurriculumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurriculumTableViewCell.swift; sourceTree = "<group>"; };
+		DE58530D24E73DA00001F0D5 /* CurriculumTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurriculumTableViewCell.xib; sourceTree = "<group>"; };
+		DE58531124E742260001F0D5 /* CurriculumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurriculumModel.swift; sourceTree = "<group>"; };
+		DE58531324E7790D0001F0D5 /* CourseListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseListCollectionViewCell.swift; sourceTree = "<group>"; };
+		DE58531424E7790D0001F0D5 /* CourseListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseListCollectionViewCell.xib; sourceTree = "<group>"; };
+		DE58531724E779290001F0D5 /* StockCourseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCourseTableViewCell.swift; sourceTree = "<group>"; };
+		DE58531824E779290001F0D5 /* StockCourseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StockCourseTableViewCell.xib; sourceTree = "<group>"; };
+		DE58531B24E789B20001F0D5 /* StockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockModel.swift; sourceTree = "<group>"; };
+		DE58531D24E78A8B0001F0D5 /* NotificationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationExtension.swift; sourceTree = "<group>"; };
+		DE58531F24E791B80001F0D5 /* CurriculumPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurriculumPresenter.swift; sourceTree = "<group>"; };
+		DE58532124E7A1340001F0D5 /* curriculum.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = curriculum.json; sourceTree = "<group>"; };
+		DE58532324E7A1C20001F0D5 /* CourseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseModel.swift; sourceTree = "<group>"; };
+		DE58532524E7A93C0001F0D5 /* CoursePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursePresenter.swift; sourceTree = "<group>"; };
+		DE58532724E7B01A0001F0D5 /* UILabelDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelDecorator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,7 +172,6 @@
 				9FD0E18FFA733FB9DF6A1578 /* Pods-PasscodeLockLayout.debug.xcconfig */,
 				6931B7429A6AE136B178EC92 /* Pods-PasscodeLockLayout.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -196,7 +239,11 @@
 		DE5852B824E59B560001F0D5 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				DE58528C24E59A9A0001F0D5 /* ViewController.swift */,
+				DE58530224E6F2120001F0D5 /* Course */,
+				DE58530124E6F1FD0001F0D5 /* Curriculum */,
+				DE58530524E6F2320001F0D5 /* Main */,
+				DE58530924E6F2690001F0D5 /* Profile */,
+				DE58530624E6F23D0001F0D5 /* Stock */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -205,6 +252,11 @@
 			isa = PBXGroup;
 			children = (
 				DE5852C124E59FBD0001F0D5 /* CustomViewBase.swift */,
+				DE5852EF24E697A60001F0D5 /* CourseListCollectionViewCell */,
+				DE5852ED24E696FC0001F0D5 /* CurriculumTableViewCell */,
+				DE5852F024E6982E0001F0D5 /* InputPasscodeDisplayView */,
+				DE5852F124E6983E0001F0D5 /* InputPasscodeKeyboardView */,
+				DE5852EE24E6973C0001F0D5 /* StockCourseTableViewCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -212,9 +264,13 @@
 		DE5852BA24E59B6B0001F0D5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DE58532324E7A1C20001F0D5 /* CourseModel.swift */,
+				DE58531124E742260001F0D5 /* CurriculumModel.swift */,
 				DE5852E024E5AE770001F0D5 /* PasscodeModel.swift */,
+				DE58531B24E789B20001F0D5 /* StockModel.swift */,
 				DE5852BD24E59C300001F0D5 /* Json */,
-				DE5852DD24E5A9560001F0D5 /* UserDefaultStore */,
+				DE5852F224E69D120001F0D5 /* Realm */,
+				DE5852DD24E5A9560001F0D5 /* UserDefault */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -222,6 +278,8 @@
 		DE5852BB24E59B710001F0D5 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				DE58532524E7A93C0001F0D5 /* CoursePresenter.swift */,
+				DE58531F24E791B80001F0D5 /* CurriculumPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -230,7 +288,12 @@
 			isa = PBXGroup;
 			children = (
 				DE58529324E59AA60001F0D5 /* LaunchScreen.storyboard */,
-				DE58528E24E59A9A0001F0D5 /* Main.storyboard */,
+				DE5852E824E696AE0001F0D5 /* Course */,
+				DE5852E724E6967C0001F0D5 /* Curriculum */,
+				DE5852E624E696710001F0D5 /* Main */,
+				DE5852EC24E696E20001F0D5 /* Passcode */,
+				DE5852EA24E696C50001F0D5 /* Profile */,
+				DE5852E924E696BD0001F0D5 /* Stock */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -238,6 +301,7 @@
 		DE5852BD24E59C300001F0D5 /* Json */ = {
 			isa = PBXGroup;
 			children = (
+				DE58532124E7A1340001F0D5 /* curriculum.json */,
 			);
 			path = Json;
 			sourceTree = "<group>";
@@ -259,6 +323,7 @@
 				DE5852D124E5A3C70001F0D5 /* UIColorExtension.swift */,
 				DE5852D924E5A7D40001F0D5 /* UITableViewExtension.swift */,
 				DE5852D324E5A3E40001F0D5 /* UIViewControllerExtension.swift */,
+				DE58531D24E78A8B0001F0D5 /* NotificationExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -268,6 +333,7 @@
 			children = (
 				DE5852D724E5A46C0001F0D5 /* PasscodeLockConstant.swift */,
 				DE5852DB24E5A92F0001F0D5 /* LocalAuthenticationManager.swift */,
+				DE58532724E7B01A0001F0D5 /* UILabelDecorator.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -278,17 +344,152 @@
 				DE5852C524E5A2FE0001F0D5 /* CryptoAlgorithm.swift */,
 				DE5852C924E5A3570001F0D5 /* InputPasscodeType.swift */,
 				DE5852C724E5A31F0001F0D5 /* LocalAuthenticationType.swift */,
-				DE5852CB24E5A3750001F0D5 /* TabBarItemType.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
 		};
-		DE5852DD24E5A9560001F0D5 /* UserDefaultStore */ = {
+		DE5852DD24E5A9560001F0D5 /* UserDefault */ = {
 			isa = PBXGroup;
 			children = (
 				DE5852DE24E5AD710001F0D5 /* UserDefaultStore.swift */,
 			);
-			path = UserDefaultStore;
+			path = UserDefault;
+			sourceTree = "<group>";
+		};
+		DE5852E624E696710001F0D5 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				DE58528E24E59A9A0001F0D5 /* Main.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		DE5852E724E6967C0001F0D5 /* Curriculum */ = {
+			isa = PBXGroup;
+			children = (
+				DE5852F524E6B0770001F0D5 /* Curriculum.storyboard */,
+			);
+			path = Curriculum;
+			sourceTree = "<group>";
+		};
+		DE5852E824E696AE0001F0D5 /* Course */ = {
+			isa = PBXGroup;
+			children = (
+				DE5852F724E6B0870001F0D5 /* Course.storyboard */,
+			);
+			path = Course;
+			sourceTree = "<group>";
+		};
+		DE5852E924E696BD0001F0D5 /* Stock */ = {
+			isa = PBXGroup;
+			children = (
+				DE5852FD24E6B1060001F0D5 /* Stock.storyboard */,
+			);
+			path = Stock;
+			sourceTree = "<group>";
+		};
+		DE5852EA24E696C50001F0D5 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				DE5852F924E6B0DC0001F0D5 /* Profile.storyboard */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		DE5852EC24E696E20001F0D5 /* Passcode */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Passcode;
+			sourceTree = "<group>";
+		};
+		DE5852ED24E696FC0001F0D5 /* CurriculumTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				DE58530C24E73DA00001F0D5 /* CurriculumTableViewCell.swift */,
+				DE58530D24E73DA00001F0D5 /* CurriculumTableViewCell.xib */,
+			);
+			path = CurriculumTableViewCell;
+			sourceTree = "<group>";
+		};
+		DE5852EE24E6973C0001F0D5 /* StockCourseTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				DE58531724E779290001F0D5 /* StockCourseTableViewCell.swift */,
+				DE58531824E779290001F0D5 /* StockCourseTableViewCell.xib */,
+			);
+			path = StockCourseTableViewCell;
+			sourceTree = "<group>";
+		};
+		DE5852EF24E697A60001F0D5 /* CourseListCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				DE58531324E7790D0001F0D5 /* CourseListCollectionViewCell.swift */,
+				DE58531424E7790D0001F0D5 /* CourseListCollectionViewCell.xib */,
+			);
+			path = CourseListCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		DE5852F024E6982E0001F0D5 /* InputPasscodeDisplayView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = InputPasscodeDisplayView;
+			sourceTree = "<group>";
+		};
+		DE5852F124E6983E0001F0D5 /* InputPasscodeKeyboardView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = InputPasscodeKeyboardView;
+			sourceTree = "<group>";
+		};
+		DE5852F224E69D120001F0D5 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				DE5852F324E69FCB0001F0D5 /* RealmStore.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		DE58530124E6F1FD0001F0D5 /* Curriculum */ = {
+			isa = PBXGroup;
+			children = (
+				DE5852FF24E6F1E80001F0D5 /* CurriculumViewController.swift */,
+			);
+			path = Curriculum;
+			sourceTree = "<group>";
+		};
+		DE58530224E6F2120001F0D5 /* Course */ = {
+			isa = PBXGroup;
+			children = (
+				DE58530324E6F2250001F0D5 /* CourseViewController.swift */,
+			);
+			path = Course;
+			sourceTree = "<group>";
+		};
+		DE58530524E6F2320001F0D5 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				DE5852E424E608A10001F0D5 /* MainTabBarController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		DE58530624E6F23D0001F0D5 /* Stock */ = {
+			isa = PBXGroup;
+			children = (
+				DE58530724E6F2600001F0D5 /* StockViewController.swift */,
+			);
+			path = Stock;
+			sourceTree = "<group>";
+		};
+		DE58530924E6F2690001F0D5 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				DE58530A24E6F2950001F0D5 /* ProfileViewController.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -397,9 +598,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE5852FA24E6B0DC0001F0D5 /* Profile.storyboard in Resources */,
+				DE58531A24E779290001F0D5 /* StockCourseTableViewCell.xib in Resources */,
 				DE58529524E59AA60001F0D5 /* LaunchScreen.storyboard in Resources */,
+				DE58530F24E73DA00001F0D5 /* CurriculumTableViewCell.xib in Resources */,
 				DE58529224E59AA60001F0D5 /* Assets.xcassets in Resources */,
+				DE5852FE24E6B1060001F0D5 /* Stock.storyboard in Resources */,
 				DE58529024E59A9A0001F0D5 /* Main.storyboard in Resources */,
+				DE5852F824E6B0870001F0D5 /* Course.storyboard in Resources */,
+				DE5852F624E6B0780001F0D5 /* Curriculum.storyboard in Resources */,
+				DE58531624E7790D0001F0D5 /* CourseListCollectionViewCell.xib in Resources */,
+				DE58532224E7A1350001F0D5 /* curriculum.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,22 +676,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE5852C224E59FBD0001F0D5 /* CustomViewBase.swift in Sources */,
+				DE58532024E791B80001F0D5 /* CurriculumPresenter.swift in Sources */,
 				DE5852C624E5A2FE0001F0D5 /* CryptoAlgorithm.swift in Sources */,
+				DE5852E524E608A10001F0D5 /* MainTabBarController.swift in Sources */,
 				DE5852DC24E5A92F0001F0D5 /* LocalAuthenticationManager.swift in Sources */,
-				DE58528D24E59A9A0001F0D5 /* ViewController.swift in Sources */,
+				DE58531924E779290001F0D5 /* StockCourseTableViewCell.swift in Sources */,
+				DE58532824E7B01A0001F0D5 /* UILabelDecorator.swift in Sources */,
 				DE5852DF24E5AD710001F0D5 /* UserDefaultStore.swift in Sources */,
+				DE5852F424E69FCB0001F0D5 /* RealmStore.swift in Sources */,
+				DE58531E24E78A8B0001F0D5 /* NotificationExtension.swift in Sources */,
+				DE58530E24E73DA00001F0D5 /* CurriculumTableViewCell.swift in Sources */,
+				DE58530B24E6F2950001F0D5 /* ProfileViewController.swift in Sources */,
 				DE5852CE24E5A39A0001F0D5 /* NSObjectProtocolExtension.swift in Sources */,
+				DE58530424E6F2250001F0D5 /* CourseViewController.swift in Sources */,
 				DE5852D024E5A3B10001F0D5 /* UICollectionViewExtension.swift in Sources */,
 				DE58528924E59A9A0001F0D5 /* AppDelegate.swift in Sources */,
+				DE58532424E7A1C20001F0D5 /* CourseModel.swift in Sources */,
+				DE58530024E6F1E80001F0D5 /* CurriculumViewController.swift in Sources */,
+				DE58531524E7790D0001F0D5 /* CourseListCollectionViewCell.swift in Sources */,
 				DE5852E324E5B1390001F0D5 /* StickyStyleFlowLayout.swift in Sources */,
+				DE58531C24E789B20001F0D5 /* StockModel.swift in Sources */,
 				DE5852DA24E5A7D40001F0D5 /* UITableViewExtension.swift in Sources */,
-				DE5852CC24E5A3750001F0D5 /* TabBarItemType.swift in Sources */,
 				DE58528B24E59A9A0001F0D5 /* SceneDelegate.swift in Sources */,
 				DE5852D424E5A3E40001F0D5 /* UIViewControllerExtension.swift in Sources */,
 				DE5852D224E5A3C70001F0D5 /* UIColorExtension.swift in Sources */,
+				DE58531224E742260001F0D5 /* CurriculumModel.swift in Sources */,
+				DE58532624E7A93C0001F0D5 /* CoursePresenter.swift in Sources */,
 				DE5852C824E5A31F0001F0D5 /* LocalAuthenticationType.swift in Sources */,
 				DE5852D824E5A46C0001F0D5 /* PasscodeLockConstant.swift in Sources */,
 				DE5852D624E5A41E0001F0D5 /* StringExtension.swift in Sources */,
+				DE58530824E6F2600001F0D5 /* StockViewController.swift in Sources */,
 				DE5852CA24E5A3570001F0D5 /* InputPasscodeType.swift in Sources */,
 				DE5852E124E5AE770001F0D5 /* PasscodeModel.swift in Sources */,
 			);

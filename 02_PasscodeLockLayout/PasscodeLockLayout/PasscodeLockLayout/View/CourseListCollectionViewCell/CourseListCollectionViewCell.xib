@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CourseListCollectionViewCell" customModule="PasscodeLockLayout" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="72"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="72"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fxQ-Yz-jau">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="72"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="※是非ストックして情報をお待ちください！" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xBz-Pe-ALa">
+                                <rect key="frame" x="12" y="51.5" width="296" height="13.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="11"/>
+                                <color key="textColor" red="0.93725490199999995" green="0.57647058819999997" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="753" text="コース名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cku-w2-72f">
+                                <rect key="frame" x="8" y="8" width="304" height="14.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="開催日時等の情報" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jnz-ZW-MrS">
+                                <rect key="frame" x="12" y="30.5" width="296" height="13"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gwi-1k-sqz">
+                                <rect key="frame" x="0.0" y="71.5" width="320" height="0.5"/>
+                                <color key="backgroundColor" red="0.84313725490196079" green="0.84313725490196079" blue="0.84313725490196079" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="0.5" id="LZy-8e-vBQ"/>
+                                    <constraint firstAttribute="height" constant="0.5" id="PKK-U2-RTa"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="xBz-Pe-ALa" firstAttribute="top" secondItem="jnz-ZW-MrS" secondAttribute="bottom" constant="8" id="2g3-M3-zOy"/>
+                            <constraint firstItem="jnz-ZW-MrS" firstAttribute="leading" secondItem="fxQ-Yz-jau" secondAttribute="leading" constant="12" id="6gi-Sp-goC"/>
+                            <constraint firstAttribute="trailing" secondItem="cku-w2-72f" secondAttribute="trailing" constant="8" id="ASS-fO-yKW"/>
+                            <constraint firstItem="xBz-Pe-ALa" firstAttribute="leading" secondItem="fxQ-Yz-jau" secondAttribute="leading" constant="12" id="EAl-0A-rdL"/>
+                            <constraint firstAttribute="trailing" secondItem="jnz-ZW-MrS" secondAttribute="trailing" constant="12" id="SFt-y6-190"/>
+                            <constraint firstItem="cku-w2-72f" firstAttribute="leading" secondItem="fxQ-Yz-jau" secondAttribute="leading" constant="8" id="X0C-Ra-9iq"/>
+                            <constraint firstItem="gwi-1k-sqz" firstAttribute="leading" secondItem="fxQ-Yz-jau" secondAttribute="leading" id="bLb-Pw-FtN"/>
+                            <constraint firstItem="jnz-ZW-MrS" firstAttribute="top" secondItem="cku-w2-72f" secondAttribute="bottom" constant="8" id="g62-E2-AGQ"/>
+                            <constraint firstAttribute="trailing" secondItem="gwi-1k-sqz" secondAttribute="trailing" id="i1b-Rj-Evd"/>
+                            <constraint firstAttribute="trailing" secondItem="xBz-Pe-ALa" secondAttribute="trailing" constant="12" id="j3F-4G-frg"/>
+                            <constraint firstAttribute="bottom" secondItem="gwi-1k-sqz" secondAttribute="bottom" id="jBr-1G-snT"/>
+                            <constraint firstItem="gwi-1k-sqz" firstAttribute="leading" secondItem="fxQ-Yz-jau" secondAttribute="leading" id="nb5-Nc-HdO"/>
+                            <constraint firstAttribute="trailing" secondItem="gwi-1k-sqz" secondAttribute="trailing" id="vvl-0q-2at"/>
+                            <constraint firstItem="cku-w2-72f" firstAttribute="top" secondItem="fxQ-Yz-jau" secondAttribute="top" constant="8" id="xP6-Hn-NkW"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="fxQ-Yz-jau" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="1M4-qg-3HJ"/>
+                <constraint firstItem="fxQ-Yz-jau" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="JfA-a3-pxv"/>
+                <constraint firstAttribute="bottom" secondItem="fxQ-Yz-jau" secondAttribute="bottom" id="W80-gU-JLJ"/>
+                <constraint firstAttribute="trailing" secondItem="fxQ-Yz-jau" secondAttribute="trailing" id="Xdv-es-YD3"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
+        </collectionViewCell>
+    </objects>
+</document>
