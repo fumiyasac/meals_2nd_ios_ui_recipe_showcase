@@ -18,7 +18,7 @@ struct CurriculumModel: Decodable {
     let introduction: String
     let lessonCount: String
     let terms: String
-    
+
     // MARK: - Enum
 
     private enum Keys: String, CodingKey {

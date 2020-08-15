@@ -26,7 +26,7 @@ final class CurriculumViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupNavigationBarTitle("Curriculum")
+        setupNavigationBarTitle("カリキュラム一覧")
         removeBackButtonText()
         setupCurriculumTableView()
         setupCurriculumPresenter()
@@ -38,7 +38,7 @@ final class CurriculumViewController: UIViewController {
     private func setupCurriculumTableView() {
 
         // MEMO: estimatedRowHeight = セルを非表示にしている場合の最小高さ
-        tableView.estimatedRowHeight = 242.5
+        tableView.dataSource = self
         tableView.rowHeight = UITableView.automaticDimension
         tableView.delaysContentTouches = false
         tableView.registerCustomCell(CurriculumTableViewCell.self)
@@ -48,6 +48,31 @@ final class CurriculumViewController: UIViewController {
     private func setupCurriculumPresenter() {
         presenter = CurriculumPresenter(presenter: self)
         presenter.getCurriculumModels()
+    }
+}
+
+// MARK: - UITableViewDataSource
+
+extension CurriculumViewController: UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return curriculums.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCustomCell(with: CurriculumTableViewCell.self)
+        cell.delegate = self
+        cell.setCell(curriculums[indexPath.row])
+        return cell
+    }
+}
+
+// MARK: - CurriculumTableViewCellToggleDelegate
+
+extension CurriculumViewController: CurriculumTableViewCellToggleDelegate {
+
+    func showCourseButtonTappedHandler(curriculum: CurriculumModel?) {
+        //
     }
 }
 

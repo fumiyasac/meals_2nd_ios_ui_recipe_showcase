@@ -15,7 +15,6 @@ final class MainTabBarController: UITabBarController {
     // MEMO: MainTabBarControllerへ配置するものに関する設定
     enum TabBarItemsType: CaseIterable {
         case curriculum
-        case stock
         case profile
 
         // 配置するタイトルを取得する
@@ -23,8 +22,6 @@ final class MainTabBarController: UITabBarController {
             switch self {
             case .curriculum:
                 return "カリキュラム一覧"
-            case .stock:
-                return "気になるリスト"
             case .profile:
                 return "プロフィール"
             }
@@ -35,8 +32,6 @@ final class MainTabBarController: UITabBarController {
             switch self {
             case .curriculum:
                 return "book.fill"
-            case .stock:
-                return "folder.fill"
             case .profile:
                 return "person.circle.fill"
             }
@@ -68,20 +63,14 @@ final class MainTabBarController: UITabBarController {
 
         // MEMO: 各画面の土台となるUINavigationControllerをセットする
         let curriculumNavigationController = UINavigationController()
-        let stockNavigationController = UINavigationController()
         let profileNavigationController = UINavigationController()
 
         self.viewControllers = [
             curriculumNavigationController,
-            stockNavigationController,
             profileNavigationController
         ]
         curriculumNavigationController.pushViewController(
             UIStoryboard(name: "Curriculum", bundle: nil).instantiateInitialViewController()!,
-            animated: false
-        )
-        stockNavigationController.pushViewController(
-            UIStoryboard(name: "Stock", bundle: nil).instantiateInitialViewController()!,
             animated: false
         )
         profileNavigationController.pushViewController(

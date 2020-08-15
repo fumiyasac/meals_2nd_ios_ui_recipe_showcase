@@ -6,8 +6,6 @@ target 'PasscodeLockLayout' do
   use_frameworks!
 
   # Pods for PasscodeLockLayout
-  pod 'RealmSwift'
   pod 'SwipeCellKit'
   pod 'PanModal'
-  pod 'SwiftyMarkdown'
 end

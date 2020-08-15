@@ -1,34 +1,20 @@
 PODS:
   - PanModal (1.2.7)
-  - Realm (5.0.0):
-    - Realm/Headers (= 5.0.0)
-  - Realm/Headers (5.0.0)
-  - RealmSwift (5.0.0):
-    - Realm (= 5.0.0)
-  - SwiftyMarkdown (1.2.2)
   - SwipeCellKit (2.7.1)
 
 DEPENDENCIES:
   - PanModal
-  - RealmSwift
-  - SwiftyMarkdown
   - SwipeCellKit
 
 SPEC REPOS:
   trunk:
     - PanModal
-    - Realm
-    - RealmSwift
-    - SwiftyMarkdown
     - SwipeCellKit
 
 SPEC CHECKSUMS:
   PanModal: 3e16ead1a907fb06f4df3f13492fd00149fa4974
-  Realm: 76066d333de26f97e9caedaa85ee3ff4a62ca265
-  RealmSwift: c1bdff09b422569dc6881410d9ccf712bcdb79b0
-  SwiftyMarkdown: 716936bd2031df713a8d22d166b9408f4884cab3
   SwipeCellKit: 3972254a826da74609926daf59b08d6c72e619ea
 
-PODFILE CHECKSUM: 381e1c19b8c5ce5f09c834474db9a43a262914d2
+PODFILE CHECKSUM: b1dae09ea4cfdc51c1cb59338464cb60bf0c2111
 
 COCOAPODS: 1.9.1
