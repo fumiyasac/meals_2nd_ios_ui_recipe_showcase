@@ -23,7 +23,7 @@ final class MainTabBarController: UITabBarController {
             case .curriculum:
                 return "カリキュラム一覧"
             case .profile:
-                return "プロフィール"
+                return "プロフィール・設定"
             }
         }
 

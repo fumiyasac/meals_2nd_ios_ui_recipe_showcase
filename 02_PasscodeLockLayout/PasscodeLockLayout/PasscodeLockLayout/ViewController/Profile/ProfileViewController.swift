@@ -15,7 +15,7 @@ final class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupNavigationBarTitle("Profile")
+        setupNavigationBarTitle("プロフィール・設定")
         removeBackButtonText()
     }
 }
