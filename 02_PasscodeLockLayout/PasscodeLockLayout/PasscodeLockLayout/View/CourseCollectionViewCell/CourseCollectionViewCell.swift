@@ -7,8 +7,13 @@
 //
 
 import UIKit
+import SwipeCellKit
 
-final class CourseCollectionViewCell: UICollectionViewCell {
+// MEMO: UICollectionViewでもUITableViewの様にスワイプ時にメニューを表示する
+// → ライブラリ「SwipeCellKit」で提供されているクラスSwipeCollectionViewCellを継承してセルを構築する
+// ※ ライブラリ「SwipeCellKit」はUITableViewでも利用することができます。
+
+final class CourseCollectionViewCell: SwipeCollectionViewCell {
 
     // MARK: - Property
 
@@ -22,7 +27,6 @@ final class CourseCollectionViewCell: UICollectionViewCell {
     // MARK: - Function
 
     func setCell(_ course: CourseModel) {
-
         courseTitleLabel.text = course.courseTitle
         courseTermLabel.text = course.courseTerm
     }

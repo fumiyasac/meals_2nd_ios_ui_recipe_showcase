@@ -8,6 +8,7 @@
 
 import UIKit
 import PanModal
+import SwipeCellKit
 
 final class CourseViewController: UIViewController {
 
@@ -72,6 +73,10 @@ extension CourseViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCustomCell(with: CourseCollectionViewCell.self, indexPath: indexPath)
         cell.setCell(courses[indexPath.row])
+
+        // MEMO: SwipeCollectionViewCellDelegateの宣言
+        cell.delegate = self
+
         return cell
     }
 }
@@ -111,6 +116,115 @@ extension CourseViewController: CoursePresenterProtocol {
     }
 }
 
+// MARK: - SwipeCollectionViewCellDelegate
+
+extension CourseViewController: SwipeCollectionViewCellDelegate {
+
+    // MARK: - Enum
+
+    // セルをスワイプした際に表示される内容に関する定義
+    private enum ActionDescriptor: CaseIterable {
+        case readMore
+        case reserveCourse
+        case contactTeacher
+
+        func getImage() -> UIImage {
+            var sfSymbolName: String
+            switch self {
+            case .readMore:
+                sfSymbolName = "doc.text.fill"
+            case .reserveCourse:
+                sfSymbolName = "bag.fill.badge.plus"
+            case .contactTeacher:
+                sfSymbolName = "envelope.fill"
+            }
+            return UIImage(
+                systemName: sfSymbolName,
+                withConfiguration: UIImage.SymbolConfiguration(pointSize: 20, weight: .black)
+                )!.withTintColor(UIColor(code: "#ef93b6"), renderingMode: .alwaysOriginal)
+        }
+
+        func getTitle() -> String {
+            switch self {
+            case .readMore:
+                return "もっと読む"
+            case .reserveCourse:
+                return "講義予約"
+            case .contactTeacher:
+                return "講師へ質問"
+            }
+        }
+    }
+
+    // セル要素をスワイプした際に出現するメニューに関するものを設定する
+    func collectionView(_ collectionView: UICollectionView, editActionsForItemAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+
+        // 右側のスワイプのみを許可する
+        guard orientation == .right else { return nil }
+
+        // 配置したセルをスワイプした時に現れる表示要素を押下した際に実行する処理
+        let readMoreAction = SwipeAction(style: .default, title: nil, handler: { _, _ in
+            print("「もっと読む」エリアが押下されました。")
+        })
+        let reserveCourseAction = SwipeAction(style: .default, title: nil, handler: { _, _ in
+            print("「講義予約」エリアが押下されました。")
+        })
+        let contactTeacherAction = SwipeAction(style: .default, title: nil, handler: { _, _ in
+            print("「講師へ質問」エリアが押下されました。")
+        })
+
+        // 配置したセルをスワイプした時に現れる表示要素へのデザイン適用処理
+        setActionDesign(action: readMoreAction, with: .readMore)
+        setActionDesign(action: reserveCourseAction, with: .reserveCourse)
+        setActionDesign(action: contactTeacherAction, with: .contactTeacher)
+
+        // MEMO: UIAlertControllerを利用する際のコード例(1)
+        /*
+        let selectedCell = collectionView.cellForItem(at: indexPath) as! CourseCollectionViewCell
+        let reserveCourseClosure: (UIAlertAction) -> Void = { _ in
+            selectedCell.hideSwipe(animated: true)
+        }
+        let reserveCourseAction = SwipeAction(style: .default, title: "コース予約", handler: { action, indexPath in
+            let controller = UIAlertController(title: "該当コースの予約はまだ始まっていません", message: "現在はまだ準備中です。開講1ヶ月前を目処に詳細な情報を掲載する予定ですので今しばらくお待ち下さい。", preferredStyle: .alert)
+            controller.addAction(UIAlertAction(title: "OK", style: .default, handler: reserveCourseClosure))
+            self.present(controller, animated: true, completion: nil)
+        })
+        setActionDesign(action: reserveCourseAction, with: .reserveCourse)
+        */
+
+        // MEMO: UIAlertControllerを利用する際のコード例(2)
+        /*
+        let selectedCell = collectionView.cellForItem(at: indexPath) as! CourseCollectionViewCell
+        let contactTeacherClosure: (UIAlertAction) -> Void = { _ in
+            selectedCell.hideSwipe(animated: true)
+        }
+        let contactTeacherAction = SwipeAction(style: .default, title: "講師への質問", handler: { action, indexPath in
+            let controller = UIAlertController(title: "質問の内容をお選び下さい", message: "内容に応じた相談ができます。", preferredStyle: .actionSheet)
+            controller.addAction(UIAlertAction(title: "講義内容に関する質問", style: .default, handler: contactTeacherClosure))
+            controller.addAction(UIAlertAction(title: "課題提出に関する質問", style: .default, handler: contactTeacherClosure))
+            controller.addAction(UIAlertAction(title: "講義予約に関する質問", style: .default, handler: contactTeacherClosure))
+            controller.addAction(UIAlertAction(title: "キャンセル", style: .cancel, handler: contactTeacherClosure))
+            self.present(controller, animated: true, completion: nil)
+        })
+        setActionDesign(action: contactTeacherAction, with: .contactTeacher)
+        */
+
+        // MEMO: 配列の順番 = 右から並ぶ順番となる点に注意する
+        return [readMoreAction, reserveCourseAction, contactTeacherAction]
+    }
+
+    // MARK: - Private Function
+
+    private func setActionDesign(action: SwipeAction, with descriptor: ActionDescriptor) {
+        action.title = descriptor.getTitle()
+        action.image = descriptor.getImage()
+        action.backgroundColor = .clear
+        action.textColor = UIColor.darkGray
+        action.font = .systemFont(ofSize: 11)
+        action.transitionDelegate = ScaleTransition.default
+    }
+}
+
 // MARK: - PanModalPresentable
 
 extension CourseViewController: PanModalPresentable {
@@ -123,6 +237,8 @@ extension CourseViewController: PanModalPresentable {
         return true
     }
 
+    // MEMO: ライブラリ「PanModal」でのセミモーダル表示の実装ポイント
+    // (1) 
     var longFormHeight: PanModalHeight {
         return .contentHeight(288.0)
     }
