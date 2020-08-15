@@ -162,15 +162,25 @@ extension CourseViewController: SwipeCollectionViewCellDelegate {
         // 右側のスワイプのみを許可する
         guard orientation == .right else { return nil }
 
+        // MEMO: セルに表示している情報を利用する場合はこのような形になります。
+        let selectedCell = collectionView.cellForItem(at: indexPath) as! CourseCollectionViewCell
+        let selectedCourse = courses[indexPath.row]
+
         // 配置したセルをスワイプした時に現れる表示要素を押下した際に実行する処理
         let readMoreAction = SwipeAction(style: .default, title: nil, handler: { _, _ in
             print("「もっと読む」エリアが押下されました。")
+            print("selectedCell:", selectedCell)
+            print("selectedCourse:", selectedCourse)
         })
         let reserveCourseAction = SwipeAction(style: .default, title: nil, handler: { _, _ in
             print("「講義予約」エリアが押下されました。")
+            print("selectedCell:", selectedCell)
+            print("selectedCourse:", selectedCourse)
         })
         let contactTeacherAction = SwipeAction(style: .default, title: nil, handler: { _, _ in
             print("「講師へ質問」エリアが押下されました。")
+            print("selectedCell:", selectedCell)
+            print("selectedCourse:", selectedCourse)
         })
 
         // 配置したセルをスワイプした時に現れる表示要素へのデザイン適用処理
