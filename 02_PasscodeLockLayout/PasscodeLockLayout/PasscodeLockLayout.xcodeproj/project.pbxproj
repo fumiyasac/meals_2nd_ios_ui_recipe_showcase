@@ -56,6 +56,8 @@
 		DE58533B24E80FBD0001F0D5 /* course3.json in Resources */ = {isa = PBXBuildFile; fileRef = DE58533324E80FBC0001F0D5 /* course3.json */; };
 		DE58533C24E80FBD0001F0D5 /* course2.json in Resources */ = {isa = PBXBuildFile; fileRef = DE58533424E80FBD0001F0D5 /* course2.json */; };
 		DE58533D24E80FBD0001F0D5 /* course8.json in Resources */ = {isa = PBXBuildFile; fileRef = DE58533524E80FBD0001F0D5 /* course8.json */; };
+		DE58534024E8505E0001F0D5 /* Passcode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE58533F24E8505E0001F0D5 /* Passcode.storyboard */; };
+		DE58534324E850A40001F0D5 /* PasscodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58534224E850A40001F0D5 /* PasscodeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +136,8 @@
 		DE58533324E80FBC0001F0D5 /* course3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = course3.json; sourceTree = "<group>"; };
 		DE58533424E80FBD0001F0D5 /* course2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = course2.json; sourceTree = "<group>"; };
 		DE58533524E80FBD0001F0D5 /* course8.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = course8.json; sourceTree = "<group>"; };
+		DE58533F24E8505E0001F0D5 /* Passcode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Passcode.storyboard; sourceTree = "<group>"; };
+		DE58534224E850A40001F0D5 /* PasscodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +247,7 @@
 		DE5852B824E59B560001F0D5 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				DE58534124E8507E0001F0D5 /* Passcode */,
 				DE58530224E6F2120001F0D5 /* Course */,
 				DE58530124E6F1FD0001F0D5 /* Curriculum */,
 				DE58530524E6F2320001F0D5 /* Main */,
@@ -398,6 +403,7 @@
 		DE5852EC24E696E20001F0D5 /* Passcode */ = {
 			isa = PBXGroup;
 			children = (
+				DE58533F24E8505E0001F0D5 /* Passcode.storyboard */,
 			);
 			path = Passcode;
 			sourceTree = "<group>";
@@ -464,6 +470,14 @@
 				DE58532B24E807700001F0D5 /* CourseCollectionViewCell.xib */,
 			);
 			path = CourseCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		DE58534124E8507E0001F0D5 /* Passcode */ = {
+			isa = PBXGroup;
+			children = (
+				DE58534224E850A40001F0D5 /* PasscodeViewController.swift */,
+			);
+			path = Passcode;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -588,6 +602,7 @@
 				DE58532224E7A1350001F0D5 /* curriculum.json in Resources */,
 				DE58533624E80FBD0001F0D5 /* course5.json in Resources */,
 				DE58533B24E80FBD0001F0D5 /* course3.json in Resources */,
+				DE58534024E8505E0001F0D5 /* Passcode.storyboard in Resources */,
 				DE58532D24E807700001F0D5 /* CourseCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -677,6 +692,7 @@
 				DE58528B24E59A9A0001F0D5 /* SceneDelegate.swift in Sources */,
 				DE5852D424E5A3E40001F0D5 /* UIViewControllerExtension.swift in Sources */,
 				DE5852D224E5A3C70001F0D5 /* UIColorExtension.swift in Sources */,
+				DE58534324E850A40001F0D5 /* PasscodeViewController.swift in Sources */,
 				DE58531224E742260001F0D5 /* CurriculumModel.swift in Sources */,
 				DE58532624E7A93C0001F0D5 /* CoursePresenter.swift in Sources */,
 				DE5852C824E5A31F0001F0D5 /* LocalAuthenticationType.swift in Sources */,

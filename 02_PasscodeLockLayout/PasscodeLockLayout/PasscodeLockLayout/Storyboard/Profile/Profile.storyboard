@@ -297,13 +297,13 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qi7-59-jAv">
-                                                        <rect key="frame" x="52.5" y="70" width="270" height="42"/>
+                                                        <rect key="frame" x="52.5" y="70" width="270" height="40"/>
                                                         <color key="backgroundColor" red="0.93725490199999995" green="0.57647058819999997" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="270" id="Ilg-jZ-Yj9"/>
-                                                            <constraint firstAttribute="height" constant="42" id="oYb-T7-TTV"/>
+                                                            <constraint firstAttribute="height" constant="40" id="oYb-T7-TTV"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="11"/>
                                                         <state key="normal" title="TouchID / FaceIDを設定を確認する">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
@@ -313,7 +313,7 @@
                                                 <constraints>
                                                     <constraint firstItem="qi7-59-jAv" firstAttribute="centerX" secondItem="u3a-YH-uQo" secondAttribute="centerX" id="1Qe-cb-gbA"/>
                                                     <constraint firstItem="WY0-JB-vqu" firstAttribute="top" secondItem="u3a-YH-uQo" secondAttribute="top" constant="16" id="7VE-OS-i7H"/>
-                                                    <constraint firstAttribute="bottom" secondItem="qi7-59-jAv" secondAttribute="bottom" constant="22" id="OCN-gt-cPb"/>
+                                                    <constraint firstAttribute="bottom" secondItem="qi7-59-jAv" secondAttribute="bottom" constant="24" id="OCN-gt-cPb"/>
                                                     <constraint firstItem="qi7-59-jAv" firstAttribute="top" secondItem="WY0-JB-vqu" secondAttribute="bottom" constant="22" id="eBO-sN-Hg1"/>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" id="eus-yi-VEI"/>
                                                     <constraint firstItem="WY0-JB-vqu" firstAttribute="leading" secondItem="u3a-YH-uQo" secondAttribute="leading" constant="12" id="lhC-5y-nYs"/>
