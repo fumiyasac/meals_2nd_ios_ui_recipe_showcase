@@ -15,7 +15,7 @@ import UIKit
 // 参考2: UICollectionViewのカスタムレイアウトをする上でのポイント
 // https://dev.classmethod.jp/smartphone/iphone/ios6-uicollectionview-customlayout/
 
-class StickyStyleFlowLayout: UICollectionViewFlowLayout {
+final class StickyStyleFlowLayout: UICollectionViewFlowLayout {
 
     // 拡大縮小比を変更するための変数（値を変更する必要がある場合のみ利用する）
     var firstItemTransform: CGFloat?

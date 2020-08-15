@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PanModal
 
 final class CurriculumViewController: UIViewController {
 
@@ -36,11 +37,8 @@ final class CurriculumViewController: UIViewController {
 
     // 表示するUITableViewに関する設定を行う
     private func setupCurriculumTableView() {
-
-        // MEMO: estimatedRowHeight = セルを非表示にしている場合の最小高さ
         tableView.dataSource = self
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.delaysContentTouches = false
         tableView.registerCustomCell(CurriculumTableViewCell.self)
     }
 
@@ -72,7 +70,11 @@ extension CurriculumViewController: UITableViewDataSource {
 extension CurriculumViewController: CurriculumTableViewCellToggleDelegate {
 
     func showCourseButtonTappedHandler(curriculum: CurriculumModel?) {
-        //
+        if let curriculum = curriculum {
+            let courseViewController = UIStoryboard(name: "Course", bundle: nil).instantiateInitialViewController() as! CourseViewController
+            courseViewController.setCurriculum(curriculum)
+            presentPanModal(courseViewController)
+        }
     }
 }
 

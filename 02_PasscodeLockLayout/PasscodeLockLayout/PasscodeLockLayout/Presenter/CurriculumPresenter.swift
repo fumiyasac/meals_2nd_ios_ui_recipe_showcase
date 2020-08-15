@@ -29,12 +29,12 @@ final class CurriculumPresenter {
     // MARK: - Private Function
 
     func getCurriculumModels() {
-        self.presenter.bindCurriculumModels(getCurriculumModels())
+        self.presenter.bindCurriculumModels(readCurriculumJson())
     }
 
     // MARK: - Private Function
 
-    private func getCurriculumModels() -> [CurriculumModel] {
+    private func readCurriculumJson() -> [CurriculumModel] {
 
         // JSONファイルから表示用のデータを取得する
         guard let path = Bundle.main.path(forResource: "curriculum", ofType: "json") else {

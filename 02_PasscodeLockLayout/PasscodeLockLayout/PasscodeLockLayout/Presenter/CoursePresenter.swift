@@ -28,13 +28,13 @@ final class CoursePresenter {
 
     // MARK: - Private Function
 
-    func getTravelModelsBy(curriculumId: Int) {
-        self.presenter.bindCourseModels(getCourseModelsBy(curriculumId: curriculumId))
+    func getCourseModelsBy(curriculumId: Int) {
+        self.presenter.bindCourseModels(readCourseDataBy(curriculumId: curriculumId))
     }
 
     // MARK: - Private Function
 
-    private func getCourseModelsBy(curriculumId: Int) -> [CourseModel] {
+    private func readCourseDataBy(curriculumId: Int) -> [CourseModel] {
 
         // JSONファイルから表示用のデータを取得する
         guard let path = Bundle.main.path(forResource: "course\(curriculumId)", ofType: "json") else {

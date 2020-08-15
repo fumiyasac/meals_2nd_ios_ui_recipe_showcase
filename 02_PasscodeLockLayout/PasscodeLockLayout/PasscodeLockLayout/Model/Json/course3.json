@@ -1,0 +1,32 @@
+[
+    {
+        "course_id": 1,
+        "course_title": "Chapter1: 基礎知識整理(1)",
+        "course_term": "10/1 11:00~ (Online)"
+    },
+    {
+        "course_id": 2,
+        "course_title": "Chapter2: 基礎知識整理(2)",
+        "course_term": "10/1 11:00~ (Online)"
+    },
+    {
+        "course_id": 3,
+        "course_title": "Chapter3: 基礎知識整理(3)",
+        "course_term": "10/1 11:00~ (Online)"
+    },
+    {
+        "course_id": 4,
+        "course_title": "Chapter4: ユースケース紹介(1)",
+        "course_term": "10/1 11:00~ (Online)"
+    },
+    {
+        "course_id": 5,
+        "course_title": "Chapter5: ユースケース紹介(2)",
+        "course_term": "10/1 11:00~ (Online)"
+    },
+    {
+        "course_id": 6,
+        "course_title": "Chapter6: ユースケース紹介(3)",
+        "course_term": "10/1 11:00~ (Online)"
+    }
+]

@@ -1,0 +1,32 @@
+[
+    {
+        "course_id": 1,
+        "course_title": "Chapter1: Warming Up Lesson No.1",
+        "course_term": "10/1 11:00~ (Online)"
+    },
+    {
+        "course_id": 2,
+        "course_title": "Chapter2: Warming Up Lesson No.2",
+        "course_term": "10/1 11:00~ (Online)"
+    },
+    {
+        "course_id": 3,
+        "course_title": "Chapter3: Standard Lesson No.1",
+        "course_term": "10/1 11:00~ (Online)"
+    },
+    {
+        "course_id": 4,
+        "course_title": "Chapter4: Standard Lesson No.2",
+        "course_term": "10/1 11:00~ (Online)"
+    },
+    {
+        "course_id": 5,
+        "course_title": "Chapter5: Maniac Lesson No.1",
+        "course_term": "10/1 11:00~ (Online)"
+    },
+    {
+        "course_id": 6,
+        "course_title": "Chapter6: Maniac Lesson No.2",
+        "course_term": "10/1 11:00~ (Online)"
+    }
+]

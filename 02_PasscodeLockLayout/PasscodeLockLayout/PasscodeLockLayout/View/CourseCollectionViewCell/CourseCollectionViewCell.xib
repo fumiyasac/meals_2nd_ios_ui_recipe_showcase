@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CourseCollectionViewCell" customModule="PasscodeLockLayout" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="72"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="72"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="コースの内容が入ります。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7CS-lv-cG0">
+                        <rect key="frame" x="12" y="8" width="296" height="15.5"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
+                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="コースの開催に関する情報が入ります。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dD9-ye-hPQ">
+                        <rect key="frame" x="16" y="31.5" width="288" height="13"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
+                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="※現在は準備中ですのでお待ちください。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ez2-iR-5fV">
+                        <rect key="frame" x="16" y="52" width="288" height="12"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="10"/>
+                        <color key="textColor" red="0.93725490199999995" green="0.57647058819999997" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jcu-1S-yXB">
+                        <rect key="frame" x="0.0" y="71.5" width="320" height="0.5"/>
+                        <color key="backgroundColor" red="0.84313725490000002" green="0.84313725490000002" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="N4A-9W-pfy"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="0.5" id="WaR-vU-A7f"/>
+                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="0.5" id="ikv-oN-8Ey"/>
+                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="0.5" id="itd-xJ-nav"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Ez2-iR-5fV" secondAttribute="trailing" constant="16" id="0wb-sB-Lh1"/>
+                <constraint firstItem="7CS-lv-cG0" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="2EI-vA-VTh"/>
+                <constraint firstAttribute="bottom" secondItem="Ez2-iR-5fV" secondAttribute="bottom" constant="8" id="41x-N9-PZW"/>
+                <constraint firstItem="jcu-1S-yXB" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="4Js-05-aOp"/>
+                <constraint firstItem="Ez2-iR-5fV" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="6b9-Xt-Bj0"/>
+                <constraint firstAttribute="bottom" secondItem="jcu-1S-yXB" secondAttribute="bottom" id="9ex-mg-6lf"/>
+                <constraint firstItem="7CS-lv-cG0" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="12" id="HHk-kp-Pc8"/>
+                <constraint firstAttribute="trailing" secondItem="jcu-1S-yXB" secondAttribute="trailing" id="c1k-Cr-1Vc"/>
+                <constraint firstItem="dD9-ye-hPQ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="cX0-YB-xNT"/>
+                <constraint firstAttribute="trailing" secondItem="7CS-lv-cG0" secondAttribute="trailing" constant="12" id="dgA-VK-7Uw"/>
+                <constraint firstAttribute="trailing" secondItem="dD9-ye-hPQ" secondAttribute="trailing" constant="16" id="eXo-v2-fkj"/>
+                <constraint firstItem="dD9-ye-hPQ" firstAttribute="top" secondItem="7CS-lv-cG0" secondAttribute="bottom" constant="8" id="ljP-fC-1GZ"/>
+                <constraint firstItem="Ez2-iR-5fV" firstAttribute="top" secondItem="dD9-ye-hPQ" secondAttribute="bottom" constant="7.5" id="usp-rl-T6l"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="courseTermLabel" destination="dD9-ye-hPQ" id="GpP-jP-aBj"/>
+                <outlet property="courseTitleLabel" destination="7CS-lv-cG0" id="PSA-32-bXC"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="97.767857142857139"/>
+        </collectionViewCell>
+    </objects>
+</document>

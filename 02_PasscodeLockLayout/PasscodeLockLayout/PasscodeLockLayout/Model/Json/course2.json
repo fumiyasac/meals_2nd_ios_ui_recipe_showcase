@@ -1,0 +1,32 @@
+[
+    {
+        "course_id": 1,
+        "course_title": "Chapter1: なぜ苦手意識が生まれる？",
+        "course_term": "10/1 11:00~ (Online)"
+    },
+    {
+        "course_id": 2,
+        "course_title": "Chapter2: 子供の頃の体験と関係",
+        "course_term": "10/1 11:00~ (Online)"
+    },
+    {
+        "course_id": 3,
+        "course_title": "Chapter3: 美味しさを引き出す調理法",
+        "course_term": "10/1 11:00~ (Online)"
+    },
+    {
+        "course_id": 4,
+        "course_title": "Chapter4: 料理で合わせるヒント",
+        "course_term": "10/1 11:00~ (Online)"
+    },
+    {
+        "course_id": 5,
+        "course_title": "Chapter5: 実際の献立事例(1)",
+        "course_term": "10/1 11:00~ (Online)"
+    },
+    {
+        "course_id": 6,
+        "course_title": "Chapter6: 実際の献立事例(2)",
+        "course_term": "10/1 11:00~ (Online)"
+    }
+]
