@@ -16,7 +16,14 @@ final class PasscodeViewController: UIViewController {
     private var presenter: PasscodePresenter!
     private var userInputPasscode: String = ""
 
-    // MARK: - Override
+    // MEMO: パスコードが一致しない場合及び一致する場合における軽微な振動を追加する
+    private let notificationFeedbackGenerator: UINotificationFeedbackGenerator = {
+        let generator: UINotificationFeedbackGenerator = UINotificationFeedbackGenerator()
+        generator.prepare()
+        return generator
+    }()
+    
+    // MARK: - @IBOutlet
 
     @IBOutlet weak private var inputPasscodeMessageLabel: UILabel!
     @IBOutlet weak private var inputPasscodeDisplayView: InputPasscodeDisplayView!
@@ -179,7 +186,10 @@ extension PasscodeViewController: PasscodePresenterProtocol {
     // パスコードロック画面を解除する
     func dismissPasscodeLock() {
         executeSeriesAction(
-            firstAction: {},
+            // Success時のHaptic Feedbackのを実行する
+            firstAction: {
+                self.notificationFeedbackGenerator.notificationOccurred(.success)
+            },
             deleyedAction: {
                 self.dismiss(animated: true, completion: nil)
             }
@@ -199,10 +209,10 @@ extension PasscodeViewController: PasscodePresenterProtocol {
     // ユーザーが入力した値が正しくないことをユーザーへ伝える
     func showError() {
         executeSeriesAction(
-            // 実行直後はエラーメッセージを表示する & バイブレーションを適用する
+            // 実行直後はエラーメッセージを表示する & Error時のHaptic Feedbackのを実行する
             firstAction: {
                 self.inputPasscodeMessageLabel.text = "パスコードが一致しませんでした"
-                //AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+                self.notificationFeedbackGenerator.notificationOccurred(.error)
             },
             // 秒数経過後にユーザーが入力したメッセージを空にする & パスコードのハート表示をリセットする
             deleyedAction: {

@@ -33,6 +33,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func sceneWillResignActive(_ scene: UIScene) {
         print("sceneWillResignActive: フォアグラウンドからバックグラウンドへ移行しようとした時")
+
+        // パスコードロック画面を表示する
+        // MEMO: こちらのサンプルでは起動時にパスコードロックはかけない様にしています。
+        // 注意点: 他に実装されている処理の関係でsceneWillResignActiveだとうまくいかない場合は、sceneDidEnterBackgroundに当該処理を移行しても良いかと思います。
+        displayPasscodeLockScreenIfNeeded()
     }
 
     func sceneWillEnterForeground(_ scene: UIScene) {
@@ -41,10 +46,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func sceneDidEnterBackground(_ scene: UIScene) {
         print("sceneDidEnterBackground: バックグラウンドへ移行完了した時")
-
-        // パスコードロック画面を表示する
-        // MEMO: こちらのサンプルでは起動時にパスコードロックはかけない様にしています
-        displayPasscodeLockScreenIfNeeded()
     }
 
     // MARK: - Private Function
