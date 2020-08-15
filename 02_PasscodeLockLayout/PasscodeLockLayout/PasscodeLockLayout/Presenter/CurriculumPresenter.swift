@@ -29,7 +29,7 @@ final class CurriculumPresenter {
     // MARK: - Private Function
 
     func getCurriculumModels() {
-        self.presenter.bindCurriculumModels(readCurriculumJson())
+        presenter.bindCurriculumModels(readCurriculumJson())
     }
 
     // MARK: - Private Function

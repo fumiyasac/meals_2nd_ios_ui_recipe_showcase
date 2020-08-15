@@ -342,6 +342,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HNa-dy-3nM"/>
                     </view>
+                    <connections>
+                        <outlet property="editPasscodeButton" destination="DlR-c4-wzi" id="AdC-DT-zzI"/>
+                        <outlet property="openSettingButton" destination="qi7-59-jAv" id="pTZ-t9-MFN"/>
+                        <outlet property="passcodeSwitch" destination="EHO-zP-UAP" id="Xh5-9L-3pN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5h6-Hz-3Ev" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

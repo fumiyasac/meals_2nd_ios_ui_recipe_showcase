@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		D0410B5D977FC715614CD2CB /* Pods_PasscodeLockLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CCFF60414935C6690E21319 /* Pods_PasscodeLockLayout.framework */; };
+		DE114D3124E869AC00149BFD /* InputPasscodeDisplayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE114D3024E869AC00149BFD /* InputPasscodeDisplayView.xib */; };
+		DE114D3324E869FD00149BFD /* InputPasscodeDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE114D3224E869FD00149BFD /* InputPasscodeDisplayView.swift */; };
+		DE114D3524E86CF000149BFD /* InputPasscodeKeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE114D3424E86CF000149BFD /* InputPasscodeKeyboardView.xib */; };
+		DE114D3724E86CFC00149BFD /* InputPasscodeKeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE114D3624E86CFC00149BFD /* InputPasscodeKeyboardView.swift */; };
+		DE114D3924E8713C00149BFD /* PasscodePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE114D3824E8713C00149BFD /* PasscodePresenter.swift */; };
 		DE58528924E59A9A0001F0D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58528824E59A9A0001F0D5 /* AppDelegate.swift */; };
 		DE58528B24E59A9A0001F0D5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58528A24E59A9A0001F0D5 /* SceneDelegate.swift */; };
 		DE58529024E59A9A0001F0D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE58528E24E59A9A0001F0D5 /* Main.storyboard */; };
@@ -40,7 +45,6 @@
 		DE58530E24E73DA00001F0D5 /* CurriculumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58530C24E73DA00001F0D5 /* CurriculumTableViewCell.swift */; };
 		DE58530F24E73DA00001F0D5 /* CurriculumTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE58530D24E73DA00001F0D5 /* CurriculumTableViewCell.xib */; };
 		DE58531224E742260001F0D5 /* CurriculumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58531124E742260001F0D5 /* CurriculumModel.swift */; };
-		DE58531E24E78A8B0001F0D5 /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58531D24E78A8B0001F0D5 /* NotificationExtension.swift */; };
 		DE58532024E791B80001F0D5 /* CurriculumPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58531F24E791B80001F0D5 /* CurriculumPresenter.swift */; };
 		DE58532224E7A1350001F0D5 /* curriculum.json in Resources */ = {isa = PBXBuildFile; fileRef = DE58532124E7A1340001F0D5 /* curriculum.json */; };
 		DE58532424E7A1C20001F0D5 /* CourseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58532324E7A1C20001F0D5 /* CourseModel.swift */; };
@@ -81,6 +85,11 @@
 		2CCFF60414935C6690E21319 /* Pods_PasscodeLockLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PasscodeLockLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6931B7429A6AE136B178EC92 /* Pods-PasscodeLockLayout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PasscodeLockLayout.release.xcconfig"; path = "Target Support Files/Pods-PasscodeLockLayout/Pods-PasscodeLockLayout.release.xcconfig"; sourceTree = "<group>"; };
 		9FD0E18FFA733FB9DF6A1578 /* Pods-PasscodeLockLayout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PasscodeLockLayout.debug.xcconfig"; path = "Target Support Files/Pods-PasscodeLockLayout/Pods-PasscodeLockLayout.debug.xcconfig"; sourceTree = "<group>"; };
+		DE114D3024E869AC00149BFD /* InputPasscodeDisplayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputPasscodeDisplayView.xib; sourceTree = "<group>"; };
+		DE114D3224E869FD00149BFD /* InputPasscodeDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPasscodeDisplayView.swift; sourceTree = "<group>"; };
+		DE114D3424E86CF000149BFD /* InputPasscodeKeyboardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputPasscodeKeyboardView.xib; sourceTree = "<group>"; };
+		DE114D3624E86CFC00149BFD /* InputPasscodeKeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPasscodeKeyboardView.swift; sourceTree = "<group>"; };
+		DE114D3824E8713C00149BFD /* PasscodePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodePresenter.swift; sourceTree = "<group>"; };
 		DE58528524E59A9A0001F0D5 /* PasscodeLockLayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PasscodeLockLayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE58528824E59A9A0001F0D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE58528A24E59A9A0001F0D5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -120,7 +129,6 @@
 		DE58530C24E73DA00001F0D5 /* CurriculumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurriculumTableViewCell.swift; sourceTree = "<group>"; };
 		DE58530D24E73DA00001F0D5 /* CurriculumTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurriculumTableViewCell.xib; sourceTree = "<group>"; };
 		DE58531124E742260001F0D5 /* CurriculumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurriculumModel.swift; sourceTree = "<group>"; };
-		DE58531D24E78A8B0001F0D5 /* NotificationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationExtension.swift; sourceTree = "<group>"; };
 		DE58531F24E791B80001F0D5 /* CurriculumPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurriculumPresenter.swift; sourceTree = "<group>"; };
 		DE58532124E7A1340001F0D5 /* curriculum.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = curriculum.json; sourceTree = "<group>"; };
 		DE58532324E7A1C20001F0D5 /* CourseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseModel.swift; sourceTree = "<group>"; };
@@ -285,6 +293,7 @@
 			children = (
 				DE58532524E7A93C0001F0D5 /* CoursePresenter.swift */,
 				DE58531F24E791B80001F0D5 /* CurriculumPresenter.swift */,
+				DE114D3824E8713C00149BFD /* PasscodePresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -335,7 +344,6 @@
 				DE5852D124E5A3C70001F0D5 /* UIColorExtension.swift */,
 				DE5852D924E5A7D40001F0D5 /* UITableViewExtension.swift */,
 				DE5852D324E5A3E40001F0D5 /* UIViewControllerExtension.swift */,
-				DE58531D24E78A8B0001F0D5 /* NotificationExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -420,6 +428,8 @@
 		DE5852F024E6982E0001F0D5 /* InputPasscodeDisplayView */ = {
 			isa = PBXGroup;
 			children = (
+				DE114D3224E869FD00149BFD /* InputPasscodeDisplayView.swift */,
+				DE114D3024E869AC00149BFD /* InputPasscodeDisplayView.xib */,
 			);
 			path = InputPasscodeDisplayView;
 			sourceTree = "<group>";
@@ -427,6 +437,8 @@
 		DE5852F124E6983E0001F0D5 /* InputPasscodeKeyboardView */ = {
 			isa = PBXGroup;
 			children = (
+				DE114D3624E86CFC00149BFD /* InputPasscodeKeyboardView.swift */,
+				DE114D3424E86CF000149BFD /* InputPasscodeKeyboardView.xib */,
 			);
 			path = InputPasscodeKeyboardView;
 			sourceTree = "<group>";
@@ -594,9 +606,11 @@
 				DE58530F24E73DA00001F0D5 /* CurriculumTableViewCell.xib in Resources */,
 				DE58529224E59AA60001F0D5 /* Assets.xcassets in Resources */,
 				DE58529024E59A9A0001F0D5 /* Main.storyboard in Resources */,
+				DE114D3124E869AC00149BFD /* InputPasscodeDisplayView.xib in Resources */,
 				DE58533C24E80FBD0001F0D5 /* course2.json in Resources */,
 				DE5852F824E6B0870001F0D5 /* Course.storyboard in Resources */,
 				DE58533924E80FBD0001F0D5 /* course1.json in Resources */,
+				DE114D3524E86CF000149BFD /* InputPasscodeKeyboardView.xib in Resources */,
 				DE58533724E80FBD0001F0D5 /* course6.json in Resources */,
 				DE5852F624E6B0780001F0D5 /* Curriculum.storyboard in Resources */,
 				DE58532224E7A1350001F0D5 /* curriculum.json in Resources */,
@@ -678,25 +692,27 @@
 				DE5852DC24E5A92F0001F0D5 /* LocalAuthenticationManager.swift in Sources */,
 				DE58532824E7B01A0001F0D5 /* UILabelDecorator.swift in Sources */,
 				DE5852DF24E5AD710001F0D5 /* UserDefaultStore.swift in Sources */,
-				DE58531E24E78A8B0001F0D5 /* NotificationExtension.swift in Sources */,
 				DE58530E24E73DA00001F0D5 /* CurriculumTableViewCell.swift in Sources */,
 				DE58530B24E6F2950001F0D5 /* ProfileViewController.swift in Sources */,
 				DE5852CE24E5A39A0001F0D5 /* NSObjectProtocolExtension.swift in Sources */,
 				DE58530424E6F2250001F0D5 /* CourseViewController.swift in Sources */,
 				DE5852D024E5A3B10001F0D5 /* UICollectionViewExtension.swift in Sources */,
 				DE58528924E59A9A0001F0D5 /* AppDelegate.swift in Sources */,
+				DE114D3724E86CFC00149BFD /* InputPasscodeKeyboardView.swift in Sources */,
 				DE58532424E7A1C20001F0D5 /* CourseModel.swift in Sources */,
 				DE58530024E6F1E80001F0D5 /* CurriculumViewController.swift in Sources */,
 				DE5852E324E5B1390001F0D5 /* StickyStyleFlowLayout.swift in Sources */,
 				DE5852DA24E5A7D40001F0D5 /* UITableViewExtension.swift in Sources */,
 				DE58528B24E59A9A0001F0D5 /* SceneDelegate.swift in Sources */,
 				DE5852D424E5A3E40001F0D5 /* UIViewControllerExtension.swift in Sources */,
+				DE114D3324E869FD00149BFD /* InputPasscodeDisplayView.swift in Sources */,
 				DE5852D224E5A3C70001F0D5 /* UIColorExtension.swift in Sources */,
 				DE58534324E850A40001F0D5 /* PasscodeViewController.swift in Sources */,
 				DE58531224E742260001F0D5 /* CurriculumModel.swift in Sources */,
 				DE58532624E7A93C0001F0D5 /* CoursePresenter.swift in Sources */,
 				DE5852C824E5A31F0001F0D5 /* LocalAuthenticationType.swift in Sources */,
 				DE5852D824E5A46C0001F0D5 /* PasscodeLockConstant.swift in Sources */,
+				DE114D3924E8713C00149BFD /* PasscodePresenter.swift in Sources */,
 				DE5852D624E5A41E0001F0D5 /* StringExtension.swift in Sources */,
 				DE5852CA24E5A3570001F0D5 /* InputPasscodeType.swift in Sources */,
 				DE5852E124E5AE770001F0D5 /* PasscodeModel.swift in Sources */,

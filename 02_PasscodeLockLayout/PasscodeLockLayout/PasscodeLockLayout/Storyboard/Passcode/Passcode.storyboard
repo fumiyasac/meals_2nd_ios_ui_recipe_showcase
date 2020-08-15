@@ -14,13 +14,67 @@
                     <view key="view" contentMode="scaleToFill" id="SEt-Di-QFl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="53h-mI-GEn">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="427"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="パスコードを入力してください" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adK-kK-meI">
+                                        <rect key="frame" x="97.5" y="143.5" width="180.5" height="14"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="14" id="mhv-nY-WQb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gXC-kD-bh7" customClass="InputPasscodeDisplayView" customModule="PasscodeLockLayout" customModuleProvider="target">
+                                        <rect key="frame" x="37.5" y="173.5" width="300" height="80"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="ntx-xe-Xva"/>
+                                            <constraint firstAttribute="width" constant="300" id="u8g-b2-ojC"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="adK-kK-meI" firstAttribute="centerX" secondItem="53h-mI-GEn" secondAttribute="centerX" id="69m-qM-OgW"/>
+                                    <constraint firstItem="gXC-kD-bh7" firstAttribute="centerY" secondItem="53h-mI-GEn" secondAttribute="centerY" id="6qW-8r-PCd"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="adK-kK-meI" secondAttribute="trailing" constant="10" id="XTY-xj-A08"/>
+                                    <constraint firstItem="gXC-kD-bh7" firstAttribute="centerX" secondItem="53h-mI-GEn" secondAttribute="centerX" id="cOh-OK-11P"/>
+                                    <constraint firstItem="adK-kK-meI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="53h-mI-GEn" secondAttribute="leading" constant="10" id="xGy-qP-OuI"/>
+                                    <constraint firstItem="gXC-kD-bh7" firstAttribute="top" secondItem="adK-kK-meI" secondAttribute="bottom" constant="16" id="yNU-DL-Hxy"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="daL-Ds-3UV" customClass="InputPasscodeKeyboardView" customModule="PasscodeLockLayout" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="427" width="375" height="240"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="JFk-Vx-KW3"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="daL-Ds-3UV" firstAttribute="leading" secondItem="BLm-0t-jul" secondAttribute="leading" id="2Zq-Xw-xBW"/>
+                            <constraint firstItem="53h-mI-GEn" firstAttribute="trailing" secondItem="BLm-0t-jul" secondAttribute="trailing" id="cG4-ae-slW"/>
+                            <constraint firstItem="53h-mI-GEn" firstAttribute="top" secondItem="BLm-0t-jul" secondAttribute="top" id="e5t-Tw-tAX"/>
+                            <constraint firstItem="daL-Ds-3UV" firstAttribute="top" secondItem="53h-mI-GEn" secondAttribute="bottom" id="hfC-ab-Vli"/>
+                            <constraint firstItem="BLm-0t-jul" firstAttribute="bottom" secondItem="daL-Ds-3UV" secondAttribute="bottom" id="kc3-ro-dDz"/>
+                            <constraint firstItem="53h-mI-GEn" firstAttribute="leading" secondItem="BLm-0t-jul" secondAttribute="leading" id="xVz-2q-9Pd"/>
+                            <constraint firstItem="daL-Ds-3UV" firstAttribute="trailing" secondItem="BLm-0t-jul" secondAttribute="trailing" id="xdI-jz-j53"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="BLm-0t-jul"/>
                     </view>
+                    <connections>
+                        <outlet property="inputPasscodeDisplayView" destination="gXC-kD-bh7" id="5K4-HK-J3b"/>
+                        <outlet property="inputPasscodeKeyboardView" destination="daL-Ds-3UV" id="wJn-EP-7iv"/>
+                        <outlet property="inputPasscodeMessageLabel" destination="adK-kK-meI" id="U94-i1-U1T"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ni2-LS-py5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="109" y="35"/>
+            <point key="canvasLocation" x="108" y="34.632683658170919"/>
         </scene>
     </scenes>
 </document>

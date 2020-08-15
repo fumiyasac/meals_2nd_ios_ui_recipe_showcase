@@ -29,7 +29,7 @@ final class CoursePresenter {
     // MARK: - Private Function
 
     func getCourseModelsBy(curriculumId: Int) {
-        self.presenter.bindCourseModels(readCourseDataBy(curriculumId: curriculumId))
+        presenter.bindCourseModels(readCourseDataBy(curriculumId: curriculumId))
     }
 
     // MARK: - Private Function
