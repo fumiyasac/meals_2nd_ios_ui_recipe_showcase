@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,15 @@
 		DE114D5E24E88D2F00149BFD /* SmallSwiftUILayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE114D5D24E88D2F00149BFD /* SmallSwiftUILayoutTests.swift */; };
 		DE114D6924E88D2F00149BFD /* SmallSwiftUILayoutUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE114D6824E88D2F00149BFD /* SmallSwiftUILayoutUITests.swift */; };
 		DE114D7F24E890F000149BFD /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE114D7E24E890F000149BFD /* ColorExtension.swift */; };
+		DE3C1F1324EA097300B593BA /* ProfileScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3C1F1224EA097300B593BA /* ProfileScreenView.swift */; };
+		DE3C1F1724EA09F900B593BA /* GalleryScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3C1F1624EA09F900B593BA /* GalleryScreenView.swift */; };
+		DEAD74B724EB125E003AFF1A /* FindScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAD74B624EB125E003AFF1A /* FindScreenView.swift */; };
+		DEAD74BB24EB1C1B003AFF1A /* WaterfallGrid in Frameworks */ = {isa = PBXBuildFile; productRef = DEAD74BA24EB1C1B003AFF1A /* WaterfallGrid */; };
+		DEAD74BE24EB1EAB003AFF1A /* GalleryEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAD74BD24EB1EAB003AFF1A /* GalleryEntity.swift */; };
+		DEAD74C124EB2138003AFF1A /* GalleryGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAD74C024EB2138003AFF1A /* GalleryGrid.swift */; };
+		DEAD74C324EB214E003AFF1A /* GalleryComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAD74C224EB214E003AFF1A /* GalleryComponentView.swift */; };
+		DEAD74C624EB2C9D003AFF1A /* GalleryFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAD74C524EB2C9D003AFF1A /* GalleryFactory.swift */; };
+		DEAD74C824EB328E003AFF1A /* gallery.json in Resources */ = {isa = PBXBuildFile; fileRef = DEAD74C724EB328E003AFF1A /* gallery.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +60,14 @@
 		DE114D6824E88D2F00149BFD /* SmallSwiftUILayoutUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallSwiftUILayoutUITests.swift; sourceTree = "<group>"; };
 		DE114D6A24E88D2F00149BFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE114D7E24E890F000149BFD /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		DE3C1F1224EA097300B593BA /* ProfileScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenView.swift; sourceTree = "<group>"; };
+		DE3C1F1624EA09F900B593BA /* GalleryScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryScreenView.swift; sourceTree = "<group>"; };
+		DEAD74B624EB125E003AFF1A /* FindScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindScreenView.swift; sourceTree = "<group>"; };
+		DEAD74BD24EB1EAB003AFF1A /* GalleryEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryEntity.swift; sourceTree = "<group>"; };
+		DEAD74C024EB2138003AFF1A /* GalleryGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryGrid.swift; sourceTree = "<group>"; };
+		DEAD74C224EB214E003AFF1A /* GalleryComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryComponentView.swift; sourceTree = "<group>"; };
+		DEAD74C524EB2C9D003AFF1A /* GalleryFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryFactory.swift; sourceTree = "<group>"; };
+		DEAD74C724EB328E003AFF1A /* gallery.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = gallery.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEAD74BB24EB1C1B003AFF1A /* WaterfallGrid in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,12 +124,12 @@
 				DE114D4824E88D2600149BFD /* SceneDelegate.swift */,
 				DE114D4C24E88D2E00149BFD /* Assets.xcassets */,
 				DE114D7B24E8909800149BFD /* Entity */,
-				DE114D7924E8908C00149BFD /* Enum */,
 				DE114D7A24E8909200149BFD /* Extension */,
+				DEAD74C424EB2C7D003AFF1A /* Factory */,
+				DEAD74BF24EB1F21003AFF1A /* Json */,
+				DE114D7624E8906E00149BFD /* View */,
 				DE114D5124E88D2E00149BFD /* LaunchScreen.storyboard */,
 				DE114D4E24E88D2E00149BFD /* Preview Content */,
-				DE114D7624E8906E00149BFD /* View */,
-				DE114D7C24E890A900149BFD /* ViewModel */,
 			);
 			path = SmallSwiftUILayout;
 			sourceTree = "<group>";
@@ -146,31 +164,20 @@
 			isa = PBXGroup;
 			children = (
 				DE114D4A24E88D2600149BFD /* ContentView.swift */,
+				DE3C1F1524EA09AF00B593BA /* Component */,
 				DE114D7824E8907F00149BFD /* Screen */,
-				DE114D7724E8907700149BFD /* Component */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		DE114D7724E8907700149BFD /* Component */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Component;
 			sourceTree = "<group>";
 		};
 		DE114D7824E8907F00149BFD /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				DEAD74B624EB125E003AFF1A /* FindScreenView.swift */,
+				DE3C1F1624EA09F900B593BA /* GalleryScreenView.swift */,
+				DE3C1F1224EA097300B593BA /* ProfileScreenView.swift */,
 			);
 			path = Screen;
-			sourceTree = "<group>";
-		};
-		DE114D7924E8908C00149BFD /* Enum */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Enum;
 			sourceTree = "<group>";
 		};
 		DE114D7A24E8909200149BFD /* Extension */ = {
@@ -184,15 +191,42 @@
 		DE114D7B24E8909800149BFD /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				DEAD74BD24EB1EAB003AFF1A /* GalleryEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
 		};
-		DE114D7C24E890A900149BFD /* ViewModel */ = {
+		DE3C1F1524EA09AF00B593BA /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				DEAD74BC24EB1D08003AFF1A /* Gallery */,
 			);
-			path = ViewModel;
+			path = Component;
+			sourceTree = "<group>";
+		};
+		DEAD74BC24EB1D08003AFF1A /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				DEAD74C024EB2138003AFF1A /* GalleryGrid.swift */,
+				DEAD74C224EB214E003AFF1A /* GalleryComponentView.swift */,
+			);
+			path = Gallery;
+			sourceTree = "<group>";
+		};
+		DEAD74BF24EB1F21003AFF1A /* Json */ = {
+			isa = PBXGroup;
+			children = (
+				DEAD74C724EB328E003AFF1A /* gallery.json */,
+			);
+			path = Json;
+			sourceTree = "<group>";
+		};
+		DEAD74C424EB2C7D003AFF1A /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				DEAD74C524EB2C9D003AFF1A /* GalleryFactory.swift */,
+			);
+			path = Factory;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,6 +245,9 @@
 			dependencies = (
 			);
 			name = SmallSwiftUILayout;
+			packageProductDependencies = (
+				DEAD74BA24EB1C1B003AFF1A /* WaterfallGrid */,
+			);
 			productName = SmallSwiftUILayout;
 			productReference = DE114D4324E88D2600149BFD /* SmallSwiftUILayout.app */;
 			productType = "com.apple.product-type.application";
@@ -283,6 +320,10 @@
 				Base,
 			);
 			mainGroup = DE114D3A24E88D2600149BFD;
+			packageReferences = (
+				DEAD74B824EB1BFC003AFF1A /* XCRemoteSwiftPackageReference "ASCollectionView" */,
+				DEAD74B924EB1C1B003AFF1A /* XCRemoteSwiftPackageReference "WaterfallGrid" */,
+			);
 			productRefGroup = DE114D4424E88D2600149BFD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -299,6 +340,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEAD74C824EB328E003AFF1A /* gallery.json in Resources */,
 				DE114D5324E88D2E00149BFD /* LaunchScreen.storyboard in Resources */,
 				DE114D5024E88D2E00149BFD /* Preview Assets.xcassets in Resources */,
 				DE114D4D24E88D2E00149BFD /* Assets.xcassets in Resources */,
@@ -327,9 +369,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE114D4724E88D2600149BFD /* AppDelegate.swift in Sources */,
+				DEAD74C124EB2138003AFF1A /* GalleryGrid.swift in Sources */,
 				DE114D4924E88D2600149BFD /* SceneDelegate.swift in Sources */,
+				DEAD74C324EB214E003AFF1A /* GalleryComponentView.swift in Sources */,
 				DE114D4B24E88D2600149BFD /* ContentView.swift in Sources */,
+				DEAD74BE24EB1EAB003AFF1A /* GalleryEntity.swift in Sources */,
+				DE3C1F1724EA09F900B593BA /* GalleryScreenView.swift in Sources */,
+				DEAD74C624EB2C9D003AFF1A /* GalleryFactory.swift in Sources */,
 				DE114D7F24E890F000149BFD /* ColorExtension.swift in Sources */,
+				DE3C1F1324EA097300B593BA /* ProfileScreenView.swift in Sources */,
+				DEAD74B724EB125E003AFF1A /* FindScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -654,6 +703,33 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DEAD74B824EB1BFC003AFF1A /* XCRemoteSwiftPackageReference "ASCollectionView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:apptekstudios/ASCollectionView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.7.1;
+			};
+		};
+		DEAD74B924EB1C1B003AFF1A /* XCRemoteSwiftPackageReference "WaterfallGrid" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:paololeonardi/WaterfallGrid.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DEAD74BA24EB1C1B003AFF1A /* WaterfallGrid */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DEAD74B924EB1C1B003AFF1A /* XCRemoteSwiftPackageReference "WaterfallGrid" */;
+			productName = WaterfallGrid;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DE114D3B24E88D2600149BFD /* Project object */;
 }

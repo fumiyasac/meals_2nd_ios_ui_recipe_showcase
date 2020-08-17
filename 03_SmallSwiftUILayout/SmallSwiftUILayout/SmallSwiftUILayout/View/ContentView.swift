@@ -10,7 +10,41 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
+
+        //
+        TabView {
+
+            //
+            FindScreenView()
+                .tabItem {
+                    //
+                    VStack {
+                        Image(systemName: "magnifyingglass.circle.fill")
+                        Text("Find")
+                    }
+                }.tag(1) //
+
+            //
+            GalleryScreenView()
+                .tabItem {
+                    //
+                    VStack {
+                        Image(systemName: "photo.fill.on.rectangle.fill")
+                        Text("Gallery")
+                    }
+                }.tag(1) //
+
+            //
+            ProfileScreenView()
+                .tabItem {
+                    //
+                    VStack {
+                        Image(systemName: "person.crop.circle.fill")
+                        Text("Profile")
+                    }
+                }.tag(2) //
+
+        }.accentColor(Color(hex: 0xff803a)) //
     }
 }
 
