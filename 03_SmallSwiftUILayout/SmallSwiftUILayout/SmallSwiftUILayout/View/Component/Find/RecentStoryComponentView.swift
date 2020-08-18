@@ -46,7 +46,7 @@ struct RecentStoryComponentView: View {
                 .foregroundColor(.primary)
                 .padding(8)
         }
-        .padding(.bottom, 16)
+        .padding(.bottom, 28)
     }
 }
 

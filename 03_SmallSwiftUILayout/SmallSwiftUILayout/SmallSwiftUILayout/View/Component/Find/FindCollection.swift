@@ -67,7 +67,7 @@ extension FindCollection {
 
                     // 3. Sectionのサイズ設定
                     let section = NSCollectionLayoutSection(group: group)
-                    section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 16, trailing: 0)
+                    section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 24, trailing: 0)
                     // MEMO: スクロール終了時に水平方向のスクロールが可能で中心位置で止まる
                     section.orthogonalScrollingBehavior = .groupPagingCentered
                     section.visibleItemsInvalidationHandler = { _, _, _ in }
@@ -92,7 +92,7 @@ extension FindCollection {
 
                     // 3. Sectionのサイズ設定
                     let section = NSCollectionLayoutSection(group: group)
-                    section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 16, trailing: 0)
+                    section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16)
                     section.visibleItemsInvalidationHandler = { _, _, _ in }
 
                     return section
