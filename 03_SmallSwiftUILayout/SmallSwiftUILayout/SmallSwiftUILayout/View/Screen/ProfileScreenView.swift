@@ -13,6 +13,8 @@ import SwiftUI
 
 struct ProfileScreenView: View {
 
+    // MARK: - Property
+
     private let regularFontName = "AvenirNext-Regular"
     private let boldFontName = "AvenirNext-Bold"
 

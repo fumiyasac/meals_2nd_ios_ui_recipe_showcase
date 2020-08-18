@@ -18,6 +18,8 @@
 		DE114D7F24E890F000149BFD /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE114D7E24E890F000149BFD /* ColorExtension.swift */; };
 		DE3C1F1324EA097300B593BA /* ProfileScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3C1F1224EA097300B593BA /* ProfileScreenView.swift */; };
 		DE3C1F1724EA09F900B593BA /* GalleryScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3C1F1624EA09F900B593BA /* GalleryScreenView.swift */; };
+		DE77CB2C24EB7BE2002C4A7B /* ASCollectionViewDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = DE77CB2B24EB7BE2002C4A7B /* ASCollectionViewDynamic */; };
+		DE77CB2D24EB7BE2002C4A7B /* ASCollectionViewDynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = DE77CB2B24EB7BE2002C4A7B /* ASCollectionViewDynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		DEAD74B724EB125E003AFF1A /* FindScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAD74B624EB125E003AFF1A /* FindScreenView.swift */; };
 		DEAD74BB24EB1C1B003AFF1A /* WaterfallGrid in Frameworks */ = {isa = PBXBuildFile; productRef = DEAD74BA24EB1C1B003AFF1A /* WaterfallGrid */; };
 		DEAD74BE24EB1EAB003AFF1A /* GalleryEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAD74BD24EB1EAB003AFF1A /* GalleryEntity.swift */; };
@@ -25,6 +27,15 @@
 		DEAD74C324EB214E003AFF1A /* GalleryComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAD74C224EB214E003AFF1A /* GalleryComponentView.swift */; };
 		DEAD74C624EB2C9D003AFF1A /* GalleryFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAD74C524EB2C9D003AFF1A /* GalleryFactory.swift */; };
 		DEAD74C824EB328E003AFF1A /* gallery.json in Resources */ = {isa = PBXBuildFile; fileRef = DEAD74C724EB328E003AFF1A /* gallery.json */; };
+		DEAD74CA24EB60DD003AFF1A /* FindFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAD74C924EB60DD003AFF1A /* FindFactory.swift */; };
+		DEAD74CC24EB60F8003AFF1A /* FeaturedContentsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAD74CB24EB60F8003AFF1A /* FeaturedContentsEntity.swift */; };
+		DEAD74CE24EB6112003AFF1A /* RecentStoryEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAD74CD24EB6112003AFF1A /* RecentStoryEntity.swift */; };
+		DEAD74D024EB613F003AFF1A /* FindEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAD74CF24EB613F003AFF1A /* FindEntity.swift */; };
+		DEAD74D324EB679E003AFF1A /* FindCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAD74D224EB679E003AFF1A /* FindCollection.swift */; };
+		DEAD74D724EB68AD003AFF1A /* FeaturedContentsComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAD74D624EB68AD003AFF1A /* FeaturedContentsComponentView.swift */; };
+		DEAD74D924EB6DD6003AFF1A /* featured_contents.json in Resources */ = {isa = PBXBuildFile; fileRef = DEAD74D824EB6DD6003AFF1A /* featured_contents.json */; };
+		DEAD74DB24EB6E30003AFF1A /* RecentStoryComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAD74DA24EB6E30003AFF1A /* RecentStoryComponentView.swift */; };
+		DEAD74DD24EB7655003AFF1A /* recent_story.json in Resources */ = {isa = PBXBuildFile; fileRef = DEAD74DC24EB7655003AFF1A /* recent_story.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +54,20 @@
 			remoteInfo = SmallSwiftUILayout;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DE77CB2E24EB7BE2002C4A7B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DE77CB2D24EB7BE2002C4A7B /* ASCollectionViewDynamic in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		DE114D4324E88D2600149BFD /* SmallSwiftUILayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmallSwiftUILayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,6 +93,15 @@
 		DEAD74C224EB214E003AFF1A /* GalleryComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryComponentView.swift; sourceTree = "<group>"; };
 		DEAD74C524EB2C9D003AFF1A /* GalleryFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryFactory.swift; sourceTree = "<group>"; };
 		DEAD74C724EB328E003AFF1A /* gallery.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = gallery.json; sourceTree = "<group>"; };
+		DEAD74C924EB60DD003AFF1A /* FindFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFactory.swift; sourceTree = "<group>"; };
+		DEAD74CB24EB60F8003AFF1A /* FeaturedContentsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedContentsEntity.swift; sourceTree = "<group>"; };
+		DEAD74CD24EB6112003AFF1A /* RecentStoryEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentStoryEntity.swift; sourceTree = "<group>"; };
+		DEAD74CF24EB613F003AFF1A /* FindEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindEntity.swift; sourceTree = "<group>"; };
+		DEAD74D224EB679E003AFF1A /* FindCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindCollection.swift; sourceTree = "<group>"; };
+		DEAD74D624EB68AD003AFF1A /* FeaturedContentsComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedContentsComponentView.swift; sourceTree = "<group>"; };
+		DEAD74D824EB6DD6003AFF1A /* featured_contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = featured_contents.json; sourceTree = "<group>"; };
+		DEAD74DA24EB6E30003AFF1A /* RecentStoryComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentStoryComponentView.swift; sourceTree = "<group>"; };
+		DEAD74DC24EB7655003AFF1A /* recent_story.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recent_story.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +110,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEAD74BB24EB1C1B003AFF1A /* WaterfallGrid in Frameworks */,
+				DE77CB2C24EB7BE2002C4A7B /* ASCollectionViewDynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +227,9 @@
 			isa = PBXGroup;
 			children = (
 				DEAD74BD24EB1EAB003AFF1A /* GalleryEntity.swift */,
+				DEAD74CB24EB60F8003AFF1A /* FeaturedContentsEntity.swift */,
+				DEAD74CD24EB6112003AFF1A /* RecentStoryEntity.swift */,
+				DEAD74CF24EB613F003AFF1A /* FindEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -199,6 +237,7 @@
 		DE3C1F1524EA09AF00B593BA /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				DEAD74D124EB6768003AFF1A /* Find */,
 				DEAD74BC24EB1D08003AFF1A /* Gallery */,
 			);
 			path = Component;
@@ -216,7 +255,9 @@
 		DEAD74BF24EB1F21003AFF1A /* Json */ = {
 			isa = PBXGroup;
 			children = (
+				DEAD74D824EB6DD6003AFF1A /* featured_contents.json */,
 				DEAD74C724EB328E003AFF1A /* gallery.json */,
+				DEAD74DC24EB7655003AFF1A /* recent_story.json */,
 			);
 			path = Json;
 			sourceTree = "<group>";
@@ -225,8 +266,19 @@
 			isa = PBXGroup;
 			children = (
 				DEAD74C524EB2C9D003AFF1A /* GalleryFactory.swift */,
+				DEAD74C924EB60DD003AFF1A /* FindFactory.swift */,
 			);
 			path = Factory;
+			sourceTree = "<group>";
+		};
+		DEAD74D124EB6768003AFF1A /* Find */ = {
+			isa = PBXGroup;
+			children = (
+				DEAD74D224EB679E003AFF1A /* FindCollection.swift */,
+				DEAD74D624EB68AD003AFF1A /* FeaturedContentsComponentView.swift */,
+				DEAD74DA24EB6E30003AFF1A /* RecentStoryComponentView.swift */,
+			);
+			path = Find;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,6 +291,7 @@
 				DE114D3F24E88D2600149BFD /* Sources */,
 				DE114D4024E88D2600149BFD /* Frameworks */,
 				DE114D4124E88D2600149BFD /* Resources */,
+				DE77CB2E24EB7BE2002C4A7B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -247,6 +300,7 @@
 			name = SmallSwiftUILayout;
 			packageProductDependencies = (
 				DEAD74BA24EB1C1B003AFF1A /* WaterfallGrid */,
+				DE77CB2B24EB7BE2002C4A7B /* ASCollectionViewDynamic */,
 			);
 			productName = SmallSwiftUILayout;
 			productReference = DE114D4324E88D2600149BFD /* SmallSwiftUILayout.app */;
@@ -321,8 +375,8 @@
 			);
 			mainGroup = DE114D3A24E88D2600149BFD;
 			packageReferences = (
-				DEAD74B824EB1BFC003AFF1A /* XCRemoteSwiftPackageReference "ASCollectionView" */,
 				DEAD74B924EB1C1B003AFF1A /* XCRemoteSwiftPackageReference "WaterfallGrid" */,
+				DE77CB2A24EB7BE2002C4A7B /* XCRemoteSwiftPackageReference "ASCollectionView" */,
 			);
 			productRefGroup = DE114D4424E88D2600149BFD /* Products */;
 			projectDirPath = "";
@@ -343,6 +397,8 @@
 				DEAD74C824EB328E003AFF1A /* gallery.json in Resources */,
 				DE114D5324E88D2E00149BFD /* LaunchScreen.storyboard in Resources */,
 				DE114D5024E88D2E00149BFD /* Preview Assets.xcassets in Resources */,
+				DEAD74D924EB6DD6003AFF1A /* featured_contents.json in Resources */,
+				DEAD74DD24EB7655003AFF1A /* recent_story.json in Resources */,
 				DE114D4D24E88D2E00149BFD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -371,14 +427,21 @@
 				DE114D4724E88D2600149BFD /* AppDelegate.swift in Sources */,
 				DEAD74C124EB2138003AFF1A /* GalleryGrid.swift in Sources */,
 				DE114D4924E88D2600149BFD /* SceneDelegate.swift in Sources */,
+				DEAD74DB24EB6E30003AFF1A /* RecentStoryComponentView.swift in Sources */,
 				DEAD74C324EB214E003AFF1A /* GalleryComponentView.swift in Sources */,
 				DE114D4B24E88D2600149BFD /* ContentView.swift in Sources */,
+				DEAD74CC24EB60F8003AFF1A /* FeaturedContentsEntity.swift in Sources */,
 				DEAD74BE24EB1EAB003AFF1A /* GalleryEntity.swift in Sources */,
 				DE3C1F1724EA09F900B593BA /* GalleryScreenView.swift in Sources */,
+				DEAD74D724EB68AD003AFF1A /* FeaturedContentsComponentView.swift in Sources */,
 				DEAD74C624EB2C9D003AFF1A /* GalleryFactory.swift in Sources */,
+				DEAD74D024EB613F003AFF1A /* FindEntity.swift in Sources */,
 				DE114D7F24E890F000149BFD /* ColorExtension.swift in Sources */,
 				DE3C1F1324EA097300B593BA /* ProfileScreenView.swift in Sources */,
+				DEAD74D324EB679E003AFF1A /* FindCollection.swift in Sources */,
+				DEAD74CA24EB60DD003AFF1A /* FindFactory.swift in Sources */,
 				DEAD74B724EB125E003AFF1A /* FindScreenView.swift in Sources */,
+				DEAD74CE24EB6112003AFF1A /* RecentStoryEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -705,7 +768,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		DEAD74B824EB1BFC003AFF1A /* XCRemoteSwiftPackageReference "ASCollectionView" */ = {
+		DE77CB2A24EB7BE2002C4A7B /* XCRemoteSwiftPackageReference "ASCollectionView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:apptekstudios/ASCollectionView.git";
 			requirement = {
@@ -724,6 +787,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		DE77CB2B24EB7BE2002C4A7B /* ASCollectionViewDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE77CB2A24EB7BE2002C4A7B /* XCRemoteSwiftPackageReference "ASCollectionView" */;
+			productName = ASCollectionViewDynamic;
+		};
 		DEAD74BA24EB1C1B003AFF1A /* WaterfallGrid */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DEAD74B924EB1C1B003AFF1A /* XCRemoteSwiftPackageReference "WaterfallGrid" */;

@@ -13,7 +13,11 @@ import WaterfallGrid
 
 struct GalleryGrid: View {
 
+    // MARK: - Property
+
     @Binding var galleries: [GalleryEntity]
+
+    // MARK: - body
 
     var body: some View {
 

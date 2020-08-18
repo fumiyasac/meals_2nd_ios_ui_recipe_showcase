@@ -13,7 +13,6 @@ final class GalleryFactory {
     // MARK: - Static Function
 
     static func getGalleryEntities() -> [GalleryEntity] {
-        // JSONファイルから表示用のデータを取得する
         guard let path = Bundle.main.path(forResource: "gallery", ofType: "json") else {
             fatalError()
         }

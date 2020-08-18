@@ -1,0 +1,18 @@
+[
+    {
+        "featured_contents_id": 1,
+        "image_name": "featured1"
+    },
+    {
+        "featured_contents_id": 2,
+        "image_name": "featured2"
+    },
+    {
+        "featured_contents_id": 3,
+        "image_name": "featured3"
+    },
+    {
+        "featured_contents_id": 4,
+        "image_name": "featured4"
+    }
+]

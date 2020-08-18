@@ -8,12 +8,29 @@
 
 import SwiftUI
 
+// MARK: - Typealias
+
+//
+typealias FindScreenData = (sectionTitle: String, entities: [FindEntity])
+
 struct FindScreenView: View {
 
+    // MARK: - Property
+    
+    @State private var findScreenDataList: [FindScreenData] = FindFactory.getFindScreenDataList()
+    
     // MARK: - body
 
     var body: some View {
-        Text("FindScreenView")
+
+        //
+        NavigationView {
+
+            //
+            FindCollection(findScreenDataList: $findScreenDataList)
+                .navigationBarTitle(Text("Find"), displayMode: .automatic)
+        }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
