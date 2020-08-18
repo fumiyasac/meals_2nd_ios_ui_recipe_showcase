@@ -8,6 +8,8 @@
 
 import Foundation
 
+//
+
 class RecentStoryEntity: FindEntity, Decodable, Hashable {
 
     let recentStoryId: Int

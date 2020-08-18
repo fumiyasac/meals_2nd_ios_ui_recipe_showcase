@@ -10,14 +10,11 @@ import SwiftUI
 
 // MARK: - Typealias
 
-//
-typealias FindScreenData = (sectionTitle: String, entities: [FindEntity])
-
 struct FindScreenView: View {
 
     // MARK: - Property
     
-    @State private var findScreenDataList: [FindScreenData] = FindFactory.getFindScreenDataList()
+    @State private var findScreenDataList: [[FindEntity]] = FindFactory.getFindScreenDataList()
     
     // MARK: - body
 

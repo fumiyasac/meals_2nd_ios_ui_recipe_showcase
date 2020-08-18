@@ -8,6 +8,8 @@
 
 import Foundation
 
+//
+
 class FeaturedContentsEntity: FindEntity, Decodable, Hashable {
 
     let featuredContentsId: Int

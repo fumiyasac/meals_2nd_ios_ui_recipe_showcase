@@ -12,10 +12,10 @@ final class FindFactory {
     
     // MARK: - Static Function
 
-    static func getFindScreenDataList() -> [FindScreenData] {
+    static func getFindScreenDataList() -> [[FindEntity]] {
         return [
-            (sectionTitle: "⭐️特集コンテンツ", entities: getFeaturedContentsEntities()),
-            (sectionTitle: "📝最近の注目投稿", entities: getRecentStoryEntities())
+            getFeaturedContentsEntities(),
+            getRecentStoryEntities()
         ]
     }
 
