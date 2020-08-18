@@ -25,7 +25,6 @@ struct FeaturedContentsComponentView: View {
             Image(featuredContents.imageName)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .scaledToFit()
                 .padding(8)
         }
     }
