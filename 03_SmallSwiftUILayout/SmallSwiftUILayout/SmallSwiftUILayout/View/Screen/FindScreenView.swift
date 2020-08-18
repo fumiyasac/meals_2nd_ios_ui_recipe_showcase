@@ -28,7 +28,7 @@ struct FindScreenView: View {
 
             //
             FindCollection(findScreenDataList: $findScreenDataList)
-                .navigationBarTitle(Text("Find"), displayMode: .automatic)
+                .navigationBarTitle(Text("Find"), displayMode: .inline)
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }

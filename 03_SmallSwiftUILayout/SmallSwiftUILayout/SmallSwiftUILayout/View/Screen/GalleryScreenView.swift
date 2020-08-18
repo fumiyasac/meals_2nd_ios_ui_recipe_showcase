@@ -23,7 +23,7 @@ struct GalleryScreenView: View {
 
             //
             GalleryGrid(galleries: $galleries)
-                .navigationBarTitle(Text("Gallery"), displayMode: .automatic)
+                .navigationBarTitle(Text("Gallery"), displayMode: .inline)
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }
