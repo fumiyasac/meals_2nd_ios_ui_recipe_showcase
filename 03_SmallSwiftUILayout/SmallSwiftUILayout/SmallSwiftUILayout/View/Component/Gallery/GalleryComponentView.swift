@@ -21,23 +21,23 @@ struct GalleryComponentView: View {
 
     var body: some View {
 
-        //
+        // 表示要素を縦に並べる
         VStack {
             
-            //
+            // 表示画像
             Image(gallery.imageName)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .clipped()
                 .layoutPriority(97)
 
-            //
+            // テキスト要素のまわりに余白を与える
             HStack {
 
-                //
+                // 各種テキスト要素を縦に並べる
                 VStack(alignment: .leading) {
 
-                    //
+                    // タイトル表示テキスト
                     Text(gallery.title)
                         .font(.custom(boldFontName, size: 14))
                         .foregroundColor(.primary)
@@ -45,7 +45,7 @@ struct GalleryComponentView: View {
                         .fixedSize(horizontal: false, vertical: true)
                         .layoutPriority(98)
 
-                    //
+                    // サマリー表示テキスト
                     Text(gallery.summary)
                         .font(.custom(regularFontName, size: 12))
                         .foregroundColor(.secondary)
@@ -53,11 +53,14 @@ struct GalleryComponentView: View {
                         .layoutPriority(99)
                 }
             }
+            // 左右と下へ余白を付与する
             .padding([.leading, .trailing, .bottom], 8)
         }
+        // 角丸と背景を付与する
         .cornerRadius(4)
         .background(
-            RoundedRectangle(cornerRadius: 4).stroke(Color.secondary.opacity(0.5))
+            RoundedRectangle(cornerRadius: 4)
+                .stroke(Color.secondary.opacity(0.5))
         )
     }
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-// 
+// MEMO: ASCollectionViewで表示するデータはIdentifiableに適合する必要がある
 class FindEntity: Identifiable {
     var id = UUID()
 }

@@ -14,19 +14,22 @@ struct FindScreenView: View {
 
     // MARK: - Property
     
+    // Viewを表示に必要なデータ値
     @State private var findScreenDataList: [[FindEntity]] = FindFactory.getFindScreenDataList()
     
     // MARK: - body
 
     var body: some View {
 
-        //
+        // NavigationViewを配置する
         NavigationView {
 
-            //
+            // 初期値となるデータを与えてView要素を組み立てる
             FindCollection(findScreenDataList: $findScreenDataList)
+                // NavigationBarのタイトル表示の設定
                 .navigationBarTitle(Text("Find"), displayMode: .inline)
         }
+        // NavigationViewでNavigationBarを表示する
         .navigationViewStyle(StackNavigationViewStyle())
     }
 }

@@ -9,33 +9,37 @@
 import SwiftUI
 import WaterfallGrid
 
-// MEMO: ライブラリ「ASCollectionView」でも同様のことが実現できます。
+// MEMO: SwiftUIでもPinterestの様なレイアウトを実現する
+// → 従来のUICollectionViewでも難しい表現の1つ
+// https://github.com/paololeonardi/WaterfallGrid
 
 struct GalleryGrid: View {
 
     // MARK: - Property
 
+    // Viewを表示に必要なデータ
     @Binding var galleries: [GalleryEntity]
 
     // MARK: - body
 
     var body: some View {
 
-        //
-        let displayRange = (0..<galleries.count)
+        // データを元にして表示要素を組み立てる
+        return WaterfallGrid((0..<galleries.count), id: \.self) { index in
 
-        //
-        return WaterfallGrid(displayRange, id: \.self) { index in
+            // MEMO: GalleryEntityを表示するView要素に与える
             GalleryComponentView(gallery: self.galleries[index])
         }
+        // グリッド要素に関するスタイル設定
         .gridStyle(
             columnsInPortrait: 2,
             columnsInLandscape: 4,
             spacing: 8,
             padding: .init(top: 8, leading: 8, bottom: 8, trailing: 8),
             animation: .default
-        ) //
-        .scrollOptions(showsIndicators: true) //
+        )
+        // スクロール時のIndicator表示の有無
+        .scrollOptions(showsIndicators: true)
     }
 }
 

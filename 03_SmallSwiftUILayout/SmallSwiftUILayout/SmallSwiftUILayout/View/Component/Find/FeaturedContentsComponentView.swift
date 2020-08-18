@@ -18,15 +18,11 @@ struct FeaturedContentsComponentView: View {
 
     var body: some View {
 
-        //
-        VStack(alignment: .leading) {
-
-            //
-            Image(featuredContents.imageName)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .padding(8)
-        }
+        // 表示画像
+        Image(featuredContents.imageName)
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .padding(8)
     }
 }
 

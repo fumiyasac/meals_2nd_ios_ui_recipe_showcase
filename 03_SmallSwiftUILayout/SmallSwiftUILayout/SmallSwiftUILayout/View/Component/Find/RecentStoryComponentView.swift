@@ -21,31 +21,38 @@ struct RecentStoryComponentView: View {
 
     var body: some View {
 
-        //
+        // 要素は縦に左寄せに並べる
         VStack(alignment: .leading) {
 
-            //
+            // ユーザー名表示テキスト
             Text(recentStory.userName)
                 .font(.custom(boldFontName, size: 14))
                 .foregroundColor(.primary)
                 .lineLimit(1)
                 .padding([.leading, .trailing], 8)
+
+            // 日付表示テキスト
             Text(recentStory.publishedDate)
                 .font(.custom(regularFontName, size: 11))
                 .foregroundColor(.secondary)
                 .lineLimit(2)
                 .padding([.leading, .trailing], 8)
                 .padding(.top, 4)
+
+            // サムネイル画像
             Image(recentStory.imageName)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .clipped()
                 .padding(8)
+
+            // 本文表示テキスト
             Text(recentStory.description)
                 .font(.custom(regularFontName, size: 12))
                 .foregroundColor(.primary)
                 .padding(8)
         }
+        // 下に余白を付与する
         .padding(.bottom, 28)
     }
 }

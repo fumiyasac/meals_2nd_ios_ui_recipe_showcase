@@ -9,7 +9,8 @@
 import SwiftUI
 
 // MEMO: 下記の記事を参考に作ってみました（GeometryReaderの利用がポイントになります）
-
+// （記事）https://blckbirds.com/post/stretchy-header-and-parallax-scrolling-in-swiftui/
+// （サンプル）https://github.com/BLCKBIRDS/StretchyHeaderAndParallaxScrollingInSwiftUI
 
 struct ProfileScreenView: View {
 
@@ -22,32 +23,37 @@ struct ProfileScreenView: View {
 
     var body: some View {
 
-        //
+        // NavigationViewを配置する
         NavigationView {
 
-            //
+            // ScrollViewを配置する
             ScrollView {
 
-                //
+                // (ブロック1) スクロールで可変するサムネイル画像表示エリア
+                // MEMO: GeometryReaderを利用して自身のサイズと座標空間を取得可能
+                // https://blog.personal-factory.com/2019/12/08/how-to-know-coorginate-space-by-geometryreader/
                 GeometryReader { geometry in
                     
-                    //
+                    // サムネイル画像を表示するエリア
                     ZStack {
 
-                        //
+                        // MEMO: RootViewからの座標情報を元に場合分けをしている
+                        // 従来通りスクロールをした場合
                         if geometry.frame(in: .global).minY <= 0 {
-                            
-                            //
+
+                            // MEMO: Y軸方向の画像の表示オフセット値を利用してParallaxの演出をする
                             Image("profile_background")
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
                                 .frame(width: geometry.size.width, height: geometry.size.height)
-                                .offset(y: geometry.frame(in: .global).minY/10)
+                                // MEMO: 割り算の分母を小さくすると変化度合いが大きくなる
+                                .offset(y: -geometry.frame(in: .global).minY/8)
                                 .clipped()
-                            
+
+                        // 初期表示位置から更に引っ張ってスクロールをした場合
                         } else {
                             
-                            //
+                            // MEMO: Y軸方向の画像の表示オフセット値を利用して拡大するような演出をする
                             Image("profile_background")
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
@@ -57,22 +63,23 @@ struct ProfileScreenView: View {
                         }
                     }
                 }
-                .frame(height: 280) //
+                // 高さを280px付与する
+                .frame(height: 280)
 
-                //
+                // (ブロック2) 文章情報表示ブロック ※各要素は左寄せ
                 VStack(alignment: .leading) {
 
-                    //
+                    // アバター画像とテキストを横に並べて表示する
                     HStack {
 
-                        //
+                        // アバター画像表示
                         Image("profile_avater")
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .frame(width: 70, height: 70)
                             .border(Color(hex: 0xCCCCCC), width: 2)
 
-                        //
+                        // ユーザー名テキスト表示
                         VStack(alignment: .leading) {
                             Text("こちらの方が書いています🗒")
                                 .font(.custom(regularFontName, size: 14))
@@ -82,16 +89,17 @@ struct ProfileScreenView: View {
                                 .font(.custom(boldFontName, size: 14))
                         }
                     }
-                    .padding(.top, 20)
+                    // 上へ余白を付与する
+                    .padding(.top, 18)
 
-                    //
+                    // タイトルテキスト表示
                     Text("せっかくなのでおいしい食卓の風景をいかがですか？思わす見惚れる料理集")
                         .font(.custom(boldFontName, size: 24))
                         .lineLimit(nil)
                         .padding(.top, 20)
                         .padding(.bottom, 20)
                     
-                    //
+                    // プロフィール公開日テキスト表示
                     Text("📆 プロフィール公開日:")
                         .font(.custom(regularFontName, size: 14))
                         .foregroundColor(.gray)
@@ -101,7 +109,7 @@ struct ProfileScreenView: View {
                         .padding(.top, 4)
                         .padding(.bottom, 16)
 
-                    //
+                    // 現在公開中の料理写真テキスト表示
                     Text("🍔 現在公開中の料理写真:")
                         .font(.custom(regularFontName, size: 14))
                         .foregroundColor(.gray)
@@ -111,7 +119,7 @@ struct ProfileScreenView: View {
                         .padding(.top, 4)
                         .padding(.bottom, 16)
 
-                    //
+                    // 得意な料理ジャンルテキスト表示
                     Text("🍴得意な料理ジャンル:")
                         .font(.custom(regularFontName, size: 14))
                         .foregroundColor(.gray)
@@ -121,22 +129,26 @@ struct ProfileScreenView: View {
                         .padding(.top, 4)
                         .padding(.bottom, 16)
 
-                    //
+                    // 本文テキスト表示
                     Text(getProfileStatement())
                         .font(.custom(regularFontName, size: 16))
                         .lineLimit(nil)
                         .padding(.top, 4)
                 }
+                // 全体に余白を付与する
                 .padding(16)
             }
+            // NavigationBarのタイトル表示の設定
             .navigationBarTitle(Text("Profile"), displayMode: .inline)
-            .edgesIgnoringSafeArea(.top) //
+            // 上のSafeAreaを越えてコンテンツを表示する
+            .edgesIgnoringSafeArea(.top)
         }
+        // NavigationViewでNavigationBarを表示する
         .navigationViewStyle(StackNavigationViewStyle())
     }
 
     // MARK: - Private Function
-    
+
     private func getProfileStatement() -> String {
         return
 """

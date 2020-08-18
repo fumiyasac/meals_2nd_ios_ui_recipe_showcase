@@ -8,7 +8,7 @@
 
 import Foundation
 
-//
+// MEMO: FindEntityを継承したEntityクラス
 
 class FeaturedContentsEntity: FindEntity, Decodable, Hashable {
 
