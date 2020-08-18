@@ -82,11 +82,11 @@ struct ProfileScreenView: View {
                         // ユーザー名テキスト表示
                         VStack(alignment: .leading) {
                             Text("こちらの方が書いています🗒")
-                                .font(.custom(regularFontName, size: 14))
+                                .font(.custom(regularFontName, size: 13))
                                 .foregroundColor(.gray)
                             Text("通りすがりの🐈さん")
                                 .padding(.top, 8)
-                                .font(.custom(boldFontName, size: 14))
+                                .font(.custom(boldFontName, size: 13))
                         }
                     }
                     // 上へ余白を付与する
@@ -94,34 +94,34 @@ struct ProfileScreenView: View {
 
                     // タイトルテキスト表示
                     Text("せっかくなのでおいしい食卓の風景をいかがですか？思わす見惚れる料理集")
-                        .font(.custom(boldFontName, size: 24))
+                        .font(.custom(boldFontName, size: 20))
                         .lineLimit(nil)
                         .padding(.top, 20)
                         .padding(.bottom, 20)
                     
                     // プロフィール公開日テキスト表示
                     Text("📆 プロフィール公開日:")
-                        .font(.custom(regularFontName, size: 14))
+                        .font(.custom(regularFontName, size: 13))
                         .foregroundColor(.gray)
                     Text("2020年8月16日 AM 11:00")
-                        .font(.custom(regularFontName, size: 14))
+                        .font(.custom(regularFontName, size: 13))
                         .foregroundColor(.gray)
                         .padding(.top, 4)
                         .padding(.bottom, 16)
 
                     // 現在公開中の料理写真テキスト表示
                     Text("🍔 現在公開中の料理写真:")
-                        .font(.custom(regularFontName, size: 14))
+                        .font(.custom(regularFontName, size: 13))
                         .foregroundColor(.gray)
                     Text("180点")
-                        .font(.custom(regularFontName, size: 14))
+                        .font(.custom(regularFontName, size: 13))
                         .foregroundColor(.gray)
                         .padding(.top, 4)
                         .padding(.bottom, 16)
 
                     // 得意な料理ジャンルテキスト表示
                     Text("🍴得意な料理ジャンル:")
-                        .font(.custom(regularFontName, size: 14))
+                        .font(.custom(regularFontName, size: 13))
                         .foregroundColor(.gray)
                     Text("家庭料理全般 / 和食 / 洋食 / 中華 / フレンチ / イタリアン")
                         .font(.custom(regularFontName, size: 14))
@@ -131,7 +131,7 @@ struct ProfileScreenView: View {
 
                     // 本文テキスト表示
                     Text(getProfileStatement())
-                        .font(.custom(regularFontName, size: 16))
+                        .font(.custom(regularFontName, size: 13))
                         .lineLimit(nil)
                         .padding(.top, 4)
                 }
@@ -152,6 +152,8 @@ struct ProfileScreenView: View {
     private func getProfileStatement() -> String {
         return
 """
+＜まずは自己紹介＞
+
 はじめまして、都内の大学に通っている学生です。
         
 大学1年生の時にフレンチレストランでのアルバイトをきっかけに料理にはまり、自宅でも毎日料理をしています。大学での専攻は生物学でこれからの専攻は植物の遺伝子に関する研究をしていく予定です（実はこう見えてもバリバリの理科系なんです✨）。普段は大学の授業と並行して週に3回程別の調理関連の学校にも通っていわば二足の草鞋を履く生活を送っています。
@@ -160,6 +162,14 @@ struct ProfileScreenView: View {
         
 アバターに設定しているのは、私の飼い猫（2歳の♂）になります。
 とてもやんちゃで毎日料理のつまみ食い阻止にもおかげさまで大忙しです（汗）
+        
+＜最近のマイブーム紹介＞
+
+✨ねこねこ食パン🐱
+→ 食パンの形が猫ちゃんになっている何とも猫好きにはたまらない食パン。可愛い見た目以上に味もとっても良いので、朝のトーストにするのが最近の鉄板メニューです。
+
+✨サラダさば🐟
+→ これ、最近気に入っています。ほどよい塩加減と味付けが好きなんですよね。こちらはご飯のおかずにすることもありますが、冷やしうどんの具材にして食べることが多いです。
 """
     }
 }
