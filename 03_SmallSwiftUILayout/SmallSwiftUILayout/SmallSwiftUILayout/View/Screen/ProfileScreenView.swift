@@ -42,7 +42,7 @@ struct ProfileScreenView: View {
                                 .frame(width: geometry.size.width, height: geometry.size.height)
                                 .offset(y: geometry.frame(in: .global).minY/10)
                                 .clipped()
-                                .opacity(0.5)
+                                .opacity(0.4)
                             
                         } else {
                             
@@ -53,7 +53,7 @@ struct ProfileScreenView: View {
                                 .frame(width: geometry.size.width, height: geometry.size.height + geometry.frame(in: .global).minY)
                                 .clipped()
                                 .offset(y: -geometry.frame(in: .global).minY)
-                                .opacity(0.5)
+                                .opacity(0.4)
                         }
                     }
                 }
@@ -129,7 +129,7 @@ struct ProfileScreenView: View {
                 }
                 .padding(16)
             }
-            .navigationBarTitle(Text("Your Profile"), displayMode: .automatic)
+            .navigationBarTitle(Text("Profile"), displayMode: .automatic)
             .edgesIgnoringSafeArea(.top) //
         }
         .navigationViewStyle(StackNavigationViewStyle())

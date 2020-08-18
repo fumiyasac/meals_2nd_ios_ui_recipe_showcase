@@ -20,8 +20,10 @@ struct GalleryScreenView: View {
 
         //
         NavigationView {
+
+            //
             GalleryGrid(galleries: $galleries)
-                .navigationBarTitle(Text("Cooking Gallery"), displayMode: .automatic)
+                .navigationBarTitle(Text("Gallery"), displayMode: .automatic)
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }
