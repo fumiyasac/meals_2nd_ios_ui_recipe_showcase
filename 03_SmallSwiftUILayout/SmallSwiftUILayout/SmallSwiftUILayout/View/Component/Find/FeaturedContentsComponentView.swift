@@ -26,6 +26,7 @@ struct FeaturedContentsComponentView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .scaledToFit()
+                .padding(8)
         }
     }
 }
