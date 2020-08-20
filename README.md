@@ -1,4 +1,4 @@
-# iOSアプリ開発 - UI実装であると嬉しいレシピブック,おもしろ編に掲載するサンプル
+# iOSアプリ開発 - UI実装であると嬉しいレシピブックおもしろ編に掲載するサンプル
 
 ## 1. 概要
 
@@ -79,6 +79,8 @@ SwiftUIはまだ発表されてから1年程度なので、まだまだ発展途
 ![第3章サンプル図](https://github.com/fumiyasac/meals_2nd_ios_ui_recipe_showcase/blob/master/images/chapter_techbook_meals2_chapter3.jpg)
 
 __利用しているライブラリ一覧:__
+
+※ 下記ライブラリについては「Swift Package Manager」を利用して導入しています。
 
 + [ASCollectionView](https://github.com/apptekstudios/ASCollectionView)
 + [WaterfallGrid](https://github.com/paololeonardi/WaterfallGrid)
