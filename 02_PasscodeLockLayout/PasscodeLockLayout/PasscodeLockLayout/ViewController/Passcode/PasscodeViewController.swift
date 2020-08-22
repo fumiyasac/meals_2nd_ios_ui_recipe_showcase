@@ -34,7 +34,8 @@ final class PasscodeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupNavigationItems()
+        setupNavigationBarTitle(inputPasscodeType.getTitle())
+        removeBackButtonText()
         setupInputPasscodeMessageLabel()
         setupPasscodeNumberKeyboardView()
     }
@@ -56,17 +57,6 @@ final class PasscodeViewController: UIViewController {
     }
 
     // MARK: - Private Function
-
-    private func setupUserInterface() {
-        setupNavigationItems()
-        setupInputPasscodeMessageLabel()
-        setupPasscodeNumberKeyboardView()
-    }
-
-    private func setupNavigationItems() {
-        setupNavigationBarTitle(inputPasscodeType.getTitle())
-        removeBackButtonText()
-    }
 
     private func setupInputPasscodeMessageLabel() {
         inputPasscodeMessageLabel.text = inputPasscodeType.getMessage()

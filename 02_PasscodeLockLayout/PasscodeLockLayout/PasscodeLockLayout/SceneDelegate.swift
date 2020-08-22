@@ -28,14 +28,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func sceneDidBecomeActive(_ scene: UIScene) {
-        print("sceneWillEnterForeground: アプリの状態がアクティブになった時")
+        print("sceneDidBecomeActive: アプリの状態がアクティブになった時")
     }
 
     func sceneWillResignActive(_ scene: UIScene) {
         print("sceneWillResignActive: フォアグラウンドからバックグラウンドへ移行しようとした時")
 
         // パスコードロック画面を表示する
-        // MEMO: こちらのサンプルでは起動時にパスコードロックはかけない様にしています。
         // 注意点: 他に実装されている処理の関係でsceneWillResignActiveだとうまくいかない場合は、sceneDidEnterBackgroundに当該処理を移行しても良いかと思います。
         displayPasscodeLockScreenIfNeeded()
     }

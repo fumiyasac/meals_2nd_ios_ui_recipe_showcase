@@ -45,6 +45,12 @@ final class MainTabBarController: UITabBarController {
     private let selectedColor: UIColor = UIColor(code: "#ef93b6")
     private let tabBarItemFont = UIFont(name: "HelveticaNeue-Medium", size: 10)!
 
+    // パスコードロック画面表示をするかの確認を実施する ※viewDidAppearの中で最初の1回目のみ実行されるような形にしている
+    private lazy var checkPasscodeLockScreen: (() -> ())? = {
+        displayPasscodeLockScreenIfNeeded()
+        return nil
+    }()
+
     // MARK: - Override
 
     override func viewDidLoad() {
@@ -53,7 +59,35 @@ final class MainTabBarController: UITabBarController {
         setupMainTabBarController()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        // パスコードロック画面の表示チェックを最初の1回目のみ実行する
+        checkPasscodeLockScreen?()
+    }
+    
     // MARK: - Private Function
+
+    private func displayPasscodeLockScreenIfNeeded() {
+        let passcodeModel = PasscodeModel()
+
+        // パスコードロックを設定していない場合は何もしない
+        if !passcodeModel.existsHashedPasscode() {
+            return
+        }
+
+        let nav = UINavigationController(rootViewController: getPasscodeViewController())
+        nav.modalPresentationStyle = .overFullScreen
+        nav.modalTransitionStyle = .crossDissolve
+        self.present(nav, animated: true, completion: nil)
+    }
+
+    private func getPasscodeViewController() -> PasscodeViewController {
+        let passcodeViewController = UIStoryboard(name: "Passcode", bundle: nil).instantiateInitialViewController() as! PasscodeViewController
+        passcodeViewController.setTargetInputPasscodeType(.displayPasscodeLock)
+        passcodeViewController.setTargetPresenter(nil)
+        return passcodeViewController
+    }
 
     // UITabBarControllerの初期設定に関する調整
     private func setupMainTabBarController() {
