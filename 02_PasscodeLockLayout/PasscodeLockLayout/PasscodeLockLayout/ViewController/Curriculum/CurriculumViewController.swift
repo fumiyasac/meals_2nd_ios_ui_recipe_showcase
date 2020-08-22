@@ -73,6 +73,8 @@ extension CurriculumViewController: CurriculumTableViewCellToggleDelegate {
         if let curriculum = curriculum {
             let courseViewController = UIStoryboard(name: "Course", bundle: nil).instantiateInitialViewController() as! CourseViewController
             courseViewController.setCurriculum(curriculum)
+
+            // MEMO: ライブラリ「PanModal」を利用したセミモーダルを表示する
             presentPanModal(courseViewController)
         }
     }
