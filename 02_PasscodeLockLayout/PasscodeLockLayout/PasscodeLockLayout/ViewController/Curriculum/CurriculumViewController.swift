@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PanModal
 
 final class CurriculumViewController: UIViewController {
 
