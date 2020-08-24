@@ -48,7 +48,7 @@ final class GalleryViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
 
-        // UICollectionViewに付与するアニメーションに関する設定
+        // UICollectionViewに適用するレイアウトに関する設定
         // MEMO: あらかじめMultipleScrollDirectionLayoutクラスをStoryboardで適用する
         if let multipleScrollDirectionLayout = collectionView.collectionViewLayout as? MultipleScrollDirectionLayout {
             multipleScrollDirectionLayout.delegate = self

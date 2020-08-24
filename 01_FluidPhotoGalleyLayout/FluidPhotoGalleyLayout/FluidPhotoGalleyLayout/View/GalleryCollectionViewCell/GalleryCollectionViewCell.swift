@@ -10,7 +10,7 @@ import UIKit
 
 // MEMO: AutoLayoutの制約に関しての対処
 // UICollectionViewのレイアウト属性クラスを独自にカスタマイズをする場合にはレイアウトの警告には注意する必要がある。
-// 特に今回のセル表示に関しては縦:260px × 横:260pxのAutoLayoutの制約がセルいっぱいに配置している要素に必要だった。 → つまりは最低サイズを決める制約が決まっていないために発生していた。
+// 特に今回のセル表示に関しては縦:200px × 横:200pxのAutoLayoutの制約がセルいっぱいに配置している要素に必要だった。 → つまりは最低サイズを決める制約が決まっていないために発生していた。
 // → 「The behavior of the UICollectionViewFlowLayout is not defined because: the item width must be less than the width of the UICollectionView minus the section insets left and right values, minus the content insets left and right values.」 ... のような警告ログが表示される。
 // 参考: https://qiita.com/usagimaru/items/e0a4c449d4cdf341e152
 
