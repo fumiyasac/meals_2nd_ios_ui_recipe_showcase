@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-// MEMO: サムネイル写真が浮き上がってくるような表現をするカスタムトランジションを実現するために必要な遷移元の情報を取得するためのプロトコル定義
+// MEMO: サムネイル写真が浮き上がってくるような表現をするカスタムトランジションを実現するために必要な画面遷移元及び画面遷移先の情報を取得するためのプロトコル定義
 // 参考: 実装の参考にした記事とリポジトリ
 // https://devsign.co/notes/navigation-transitions-iv
 // https://github.com/bryanjclark/devsign-nav-transitions
