@@ -48,20 +48,24 @@ final class PasscodeViewController: UIViewController {
 
     // MARK: - Function
 
+    // Presenter初期化前にこの画面をどの用途で利用するか決定する値(Enum値)をセットする
     func setTargetInputPasscodeType(_ inputPasscodeType: InputPasscodeType) {
         self.inputPasscodeType = inputPasscodeType
     }
 
+    // 画面遷移元でPresenterを初期化するために利用する
     func setTargetPresenter(_ previousPasscode: String?) {
         self.presenter = PasscodePresenter(presenter: self, previousPasscode: previousPasscode)
     }
 
     // MARK: - Private Function
 
+    // この画面に配置したテキスト表示ラベルに関する初期設定をする
     private func setupInputPasscodeMessageLabel() {
         inputPasscodeMessageLabel.text = inputPasscodeType.getMessage()
     }
 
+    // この画面に配置したテンキー状のViewに関する初期設定をする
     private func setupPasscodeNumberKeyboardView() {
         inputPasscodeKeyboardView.delegate = self
 
@@ -79,10 +83,12 @@ final class PasscodeViewController: UIViewController {
         }
     }
 
+    // 画面での入力イベントを許可する
     private func acceptUserInteraction() {
         self.view.isUserInteractionEnabled = true
     }
 
+    // 画面での入力イベントを拒否する
     private func refuseUserInteraction() {
         self.view.isUserInteractionEnabled = false
     }
@@ -106,9 +112,10 @@ final class PasscodeViewController: UIViewController {
 
 extension PasscodeViewController: InputPasscodeKeyboardDelegate {
 
+    // テンキー状のViewで0から9の数値ボタンが押下された際に実行される処理
     func inputPasscodeNumber(_ numberOfString: String) {
 
-        // パスコードが0から3文字の場合はキーボードの押下された数値の文字列を末尾に追加する
+        // パスコードが0から3文字の場合は押下された数値の文字列を末尾に追加する
         if 0...3 ~= userInputPasscode.count {
             userInputPasscode = userInputPasscode + numberOfString
             inputPasscodeDisplayView.incrementDisplayImagesBy(passcodeStringCount: userInputPasscode.count)
@@ -120,6 +127,7 @@ extension PasscodeViewController: InputPasscodeKeyboardDelegate {
         }
     }
 
+    // テンキー状のViewで削除ボタンが入力が押下された際に実行される処理
     func deletePasscodeNumber() {
 
         // パスコードが1から3文字の場合は数値の文字列の末尾を削除する
@@ -129,6 +137,7 @@ extension PasscodeViewController: InputPasscodeKeyboardDelegate {
         }
     }
 
+    // テンキー状のViewでTouchIDまたはFaceIDでの生体認証を実行するボタンが押下された際に実行される処理
     func executeLocalAuthentication() {
 
         // パスコードロック画面以外では操作を許可しない

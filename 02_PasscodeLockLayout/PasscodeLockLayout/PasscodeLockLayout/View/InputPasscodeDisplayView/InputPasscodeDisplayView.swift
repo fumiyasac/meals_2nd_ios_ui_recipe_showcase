@@ -10,9 +10,13 @@ import Foundation
 import UIKit
 
 final class InputPasscodeDisplayView: CustomViewBase {
-    
+
+    // MARK: - Property
+
     private let defaultKeyImageAlpha: CGFloat = 0.2
     private let selectedKeyImageAlpha: CGFloat = 1.0
+
+    // MARK: - @IBOutlet
 
     // 4桁入力画面のハートマーク表示
     // MEMO: 「Outlet Collection」を用いて接続しているのでweakはけつけていません
@@ -69,6 +73,7 @@ final class InputPasscodeDisplayView: CustomViewBase {
 
     // MARK: - Private Function
 
+    // パスコード入力画面用の画像に関する初期設定をする
     private func setupInputPasscodeDisplayView() {
 
         keyImageViews.enumerated().forEach {

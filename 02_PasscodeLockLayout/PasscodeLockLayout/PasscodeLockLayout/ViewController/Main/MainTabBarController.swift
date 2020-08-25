@@ -64,6 +64,11 @@ final class MainTabBarController: UITabBarController {
 
         // パスコードロック画面の表示チェックを最初の1回目のみ実行する
         checkPasscodeLockScreen?()
+
+        // 補足: SceneDelegate.swiftを利用しないで従来のAppDelegate.swiftのライフサイクルを利用している場合
+        // アプリ起動完了時のパスコード画面表示の通知監視Observerを追加する
+
+        // NotificationCenter.default.addObserver(self, selector: #selector(self.displayPasscodeLockScreenIfNeeded), name: UIApplication.didFinishLaunchingNotification, object: nil)
     }
     
     // MARK: - Private Function
@@ -76,12 +81,14 @@ final class MainTabBarController: UITabBarController {
             return
         }
 
+        // パスコードロック画面をこの画面の上にかぶせる形で表示させる
         let nav = UINavigationController(rootViewController: getPasscodeViewController())
         nav.modalPresentationStyle = .overFullScreen
         nav.modalTransitionStyle = .crossDissolve
         self.present(nav, animated: true, completion: nil)
     }
 
+    // パスコードロック画面を取得する
     private func getPasscodeViewController() -> PasscodeViewController {
         let passcodeViewController = UIStoryboard(name: "Passcode", bundle: nil).instantiateInitialViewController() as! PasscodeViewController
         passcodeViewController.setTargetInputPasscodeType(.displayPasscodeLock)

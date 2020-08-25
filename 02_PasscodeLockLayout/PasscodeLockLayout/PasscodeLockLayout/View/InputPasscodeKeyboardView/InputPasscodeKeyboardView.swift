@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+// MARK: - Protocol
+
 // MEMO: このViewに配置しているボタンが押下された場合に値の変更を反映させるためのプロトコル
 protocol InputPasscodeKeyboardDelegate: NSObjectProtocol {
 
@@ -24,6 +26,8 @@ protocol InputPasscodeKeyboardDelegate: NSObjectProtocol {
 
 final class InputPasscodeKeyboardView: CustomViewBase {
 
+    // MARK: - Property
+
     weak var delegate: InputPasscodeKeyboardDelegate?
 
     // ボタン押下時の軽微な振動を追加する
@@ -32,6 +36,8 @@ final class InputPasscodeKeyboardView: CustomViewBase {
         generator.prepare()
         return generator
     }()
+
+    // MARK: - @IBOutlet
 
     // パスコードロック用の数値入力用ボタン
     // MEMO: 「Outlet Collection」を用いて接続しているのでweakはけつけていません
@@ -59,6 +65,7 @@ final class InputPasscodeKeyboardView: CustomViewBase {
 
     // MARK: - Function
 
+    // アプリ内でTouchIDまたはFaceIDの利用可能状態に応じてボタンの操作可否を決定する
     func shouldEnabledLocalAuthenticationButton(_ result: Bool = true) {
         executeLocalAuthenticationButton.isEnabled = result
         executeLocalAuthenticationButton.superview?.alpha = (result) ? 1.0 : 0.3
@@ -66,6 +73,7 @@ final class InputPasscodeKeyboardView: CustomViewBase {
 
     // MARK: - Private Function
 
+    // テンキー状のViewで0から9の数値ボタンが押下された際に実行する処理
     @objc private func inputPasscodeNumberButtonTapped(sender: UIButton) {
         guard let superView = sender.superview else {
             return
@@ -75,6 +83,7 @@ final class InputPasscodeKeyboardView: CustomViewBase {
         self.delegate?.inputPasscodeNumber(String(sender.tag))
     }
 
+    // テンキー状のViewで削除ボタンが入力が押下された際に実行する処理
     @objc private func deletePasscodeNumberButtonTapped(sender: UIButton) {
         guard let superView = sender.superview else {
             return
@@ -84,6 +93,7 @@ final class InputPasscodeKeyboardView: CustomViewBase {
         self.delegate?.deletePasscodeNumber()
     }
 
+    // テンキー状のViewでTouchIDまたはFaceIDでの生体認証を実行するボタンが押下された際に実行する処理
     @objc private func executeLocalAuthenticationButtonTapped(sender: UIButton) {
         guard let superView = sender.superview else {
             return
@@ -93,6 +103,7 @@ final class InputPasscodeKeyboardView: CustomViewBase {
         self.delegate?.executeLocalAuthentication()
     }
 
+    // このViewに関する初期設定をする
     private func setupInputPasscodeKeyboardView() {
         inputPasscodeNumberButtons.enumerated().forEach {
             let button = $0.element
@@ -102,6 +113,7 @@ final class InputPasscodeKeyboardView: CustomViewBase {
         executeLocalAuthenticationButton.addTarget(self, action: #selector(self.executeLocalAuthenticationButtonTapped(sender:)), for: .touchDown)
     }
 
+    // このView要素に配置したボタンがタップされたタイミングで実行するアニメーションを定義する
     private func executeButtonAnimation(for targetView: UIView, completionHandler: (() -> ())? = nil) {
 
         // MEMO: ユーザーの入力レスポンスがアニメーションによって遅延しないような考慮をする
