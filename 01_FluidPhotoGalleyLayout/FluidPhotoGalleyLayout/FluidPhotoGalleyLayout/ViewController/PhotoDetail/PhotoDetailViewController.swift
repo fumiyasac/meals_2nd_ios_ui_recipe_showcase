@@ -14,13 +14,13 @@ final class PhotoDetailViewController: UIViewController {
 
     private var selectedRectanglePhoto: RectanglePhoto!
 
-    // MEMO: PanGestureRecognizerで発動したDismiss時のアニメーション発火状況
+    // MEMO: UIPanGestureRecognizerで発動したDismiss時のアニメーション発火状況
     // → GalleryNavigationControllerで適用するアニメーションまたはInteractionをハンドリングする用途で使用する
     private(set) var isInteractivelyDismissing: Bool = false
 
     // MARK: - PhotoDetailInteractiveDismissTransition
 
-    // MEMO: PanGestureRecognizerと連動したDismiss時のアニメーションに関するプロトコル
+    // MEMO: UIPanGestureRecognizerと連動したDismiss時のアニメーションに関するプロトコル
     // → PhotoDetailInteractiveDismissTransitionに定義した振る舞いを実行する
     weak var transitionController: PhotoDetailInteractiveDismissTransition? = nil
 
@@ -60,7 +60,7 @@ final class PhotoDetailViewController: UIViewController {
 
     @objc private func dismissPanGestureDidChange(_ gesture: UIPanGestureRecognizer) {
 
-        // 画面のおおもととなるView要素に付与したPanGestureRecognizerが発火した際の振る舞いを定義する
+        // 画面のおおもととなるView要素に付与したUIPanGestureRecognizerが発火した際の振る舞いを定義する
         switch gesture.state {
 
         // Dismiss時のアニメーション発火状況をtrueにして遷移元へ戻る画面遷移を試みる
