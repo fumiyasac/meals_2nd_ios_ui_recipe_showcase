@@ -51,9 +51,9 @@ extension GalleryNavigationController: UINavigationControllerDelegate {
             // Popでの画面遷移時には、インタラクティブな制御を伴うアニメーション（ここではUIPanGestureRecognizerを伴って画面の状態が変化しうるアニメーション）が発火可否によって適用するアニメーションが異なる
             if let photoDetailVC = fromVC as? PhotoDetailViewController {
 
-                // MEMO: Pushでの画面遷移時には、PhotoDetailViewControllerに定義したPanGestureRecognizerで発動したDismiss時のアニメーション発火状況に応じて変化する
-                // → PanGestureRecognizerで発動したDismiss時のアニメーション発火状況がtrue: PhotoDetailInteractiveDismissTransition
-                // → PanGestureRecognizerで発動したDismiss時のアニメーション発火状況がtrue: PhotoDetailPopTransition
+                // MEMO: Pushでの画面遷移時には、PhotoDetailViewControllerに定義したUIPanGestureRecognizerで発動したDismiss時のアニメーション発火状況に応じて変化する
+                // → UIPanGestureRecognizerで発動したDismiss時のアニメーション発火状況がtrue: PhotoDetailInteractiveDismissTransition
+                // → UIPanGestureRecognizerで発動したDismiss時のアニメーション発火状況がfalse: PhotoDetailPopTransition
                 if photoDetailVC.isInteractivelyDismissing {
                     result = PhotoDetailInteractiveDismissTransition(fromDelegate: photoDetailVC, toDelegate: toVC)
                 } else {

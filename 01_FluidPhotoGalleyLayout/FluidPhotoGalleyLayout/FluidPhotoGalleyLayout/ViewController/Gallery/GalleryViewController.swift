@@ -98,6 +98,8 @@ extension GalleryViewController: UICollectionViewDataSource {
     }
 }
 
+// MARK: - UICollectionViewDelegate
+
 extension GalleryViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let fixedIndex = indexPath.section * 4 + indexPath.row
@@ -106,6 +108,8 @@ extension GalleryViewController: UICollectionViewDelegate {
         // MEMO: 現在選択しているindexPath値を変数へ一時的に保存する
         selectedIndexPath = indexPath
 
+        // MEMO: 実行しているのはUINavigationControllerのPush/Popでの画面遷移
+        // → 実際にカスタムトランジションを適用しているのはGalleryNavigationControllerになる
         if let photoDetailVC = UIStoryboard(name: "PhotoDetail", bundle: nil).instantiateInitialViewController() as? PhotoDetailViewController {
             photoDetailVC.setRectanglePhoto(rectanglePhoto: rectanglePhoto)
             self.navigationController?.pushViewController(photoDetailVC, animated: true)
