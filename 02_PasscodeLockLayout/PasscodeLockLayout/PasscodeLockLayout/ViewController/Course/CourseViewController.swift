@@ -28,7 +28,7 @@ final class CourseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupCourseCollectionView ()
+        setupCourseCollectionView()
         setupCoursePresenter()
     }
 
@@ -239,20 +239,25 @@ extension CourseViewController: SwipeCollectionViewCellDelegate {
 
 extension CourseViewController: PanModalPresentable {
 
+    // MEMO: スクロールと連動させたいUIScrollViewを継承した要素
     var panScrollable: UIScrollView? {
         return collectionView
     }
 
+    // MEMO: ドラッグして画面を閉じることを許可するかの判定
     var allowsDragToDismiss: Bool {
         return true
     }
 
-    // MEMO: ライブラリ「PanModal」でのセミモーダル表示の実装ポイント
-    // (1) 
+    // MEMO: 本章のサンプルにおけるライブラリ「PanModal」でのセミモーダル表示の実装ポイント
+    // ※ 今回は大きく表示させる時のサイズと小さく表示させる時のサイズを等しくする
+
+    // (1) セミモーダルビューにて大きく表示させる場合の高さ
     var longFormHeight: PanModalHeight {
         return .contentHeight(288.0)
     }
 
+    // (2) セミモーダルビューにて小さく表示させる場合の高さ
     var shortFormHeight: PanModalHeight {
         return .contentHeight(288.0)
     }
