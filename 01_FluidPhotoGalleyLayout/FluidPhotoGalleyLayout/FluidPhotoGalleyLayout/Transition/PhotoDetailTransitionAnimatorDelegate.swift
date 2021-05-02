@@ -16,7 +16,7 @@ import UIKit
 
 // MARK: - Protocol
 
-protocol PhotoDetailTransitionAnimatorDelegate: class {
+protocol PhotoDetailTransitionAnimatorDelegate: AnyObject {
 
     // 画面遷移処理が開始した際に実行される処理
     // MEMO: 遷移先から前の画面へ戻る時のみPhotoDetailInteractiveDismissTransitionで途中で中断することも考慮している
